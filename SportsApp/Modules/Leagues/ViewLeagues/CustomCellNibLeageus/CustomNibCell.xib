@@ -54,7 +54,7 @@
                                 </buttonConfiguration>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="d4v-Ha-Xi5" firstAttribute="leading" secondItem="rOk-Td-L87" secondAttribute="trailing" constant="5" id="0hi-br-khl"/>
                             <constraint firstAttribute="bottom" secondItem="rOk-Td-L87" secondAttribute="bottom" id="FvE-cv-NmH"/>
@@ -92,8 +92,8 @@
     <resources>
         <image name="Premier League" width="2679" height="3405"/>
         <image name="youTube" width="48" height="48"/>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

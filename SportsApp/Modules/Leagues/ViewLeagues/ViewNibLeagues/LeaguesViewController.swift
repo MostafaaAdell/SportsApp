@@ -12,6 +12,7 @@ class LeaguesViewController: UIViewController {
     @IBOutlet weak var leaguesTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+         configureLeagueTableView()
 
         // Do any additional setup after loading the view.
     }
@@ -49,7 +50,8 @@ extension LeaguesViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.customNibNameIdentfier, for: indexPath) as? CustomNibCell ?? UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.customNibNameIdentfier, for: indexPath) as! CustomNibCell
+        
         
         
         return cell
@@ -63,5 +65,25 @@ extension LeaguesViewController: UITableViewDataSource{
 
 //MARK: - Adding Delegate to League Table View
 extension LeaguesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return K.customNibNameLeaguesHeight
+    }
+    
+    //Test Detalis Second View
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      
+        let vc = TeamDetalisViewController(nibName: K.customNibTeamDetalis, bundle: nil)
+        vc.view.backgroundColor = .white
+
+        vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+         vc.modalPresentationStyle = .fullScreen
+         self.present(vc, animated: true, completion: nil)
+     //   self.navigationController?.pushViewController(vc, animated: true)
+
+
+
+        
+    }
     
 }
