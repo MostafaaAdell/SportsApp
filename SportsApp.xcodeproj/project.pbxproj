@@ -15,7 +15,6 @@
 		4529BD3F2AC4990500F4A84E /* CustomNibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529BD3D2AC4990500F4A84E /* CustomNibCell.swift */; };
 		4529BD402AC4990500F4A84E /* CustomNibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4529BD3E2AC4990500F4A84E /* CustomNibCell.xib */; };
 		4529BD432AC49DC800F4A84E /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529BD422AC49DC800F4A84E /* K.swift */; };
-		4529BD452AC4B0C600F4A84E /* MainStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529BD442AC4B0C600F4A84E /* MainStory.swift */; };
 		4529BD492AC4B54000F4A84E /* TeamDetalisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529BD482AC4B54000F4A84E /* TeamDetalisViewModel.swift */; };
 		4529BD4E2AC4B5B700F4A84E /* TeamDetalisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529BD4C2AC4B5B700F4A84E /* TeamDetalisViewController.swift */; };
 		4529BD4F2AC4B5B700F4A84E /* TeamDetalisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4529BD4D2AC4B5B700F4A84E /* TeamDetalisViewController.xib */; };
@@ -30,6 +29,7 @@
 		4548CE0D2AC44EF3000940B9 /* TabSportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548CE0C2AC44EF3000940B9 /* TabSportViewModel.swift */; };
 		4548CE112AC44F4C000940B9 /* TabCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548CE0F2AC44F4C000940B9 /* TabCustomCell.swift */; };
 		4548CE122AC44F4C000940B9 /* TabCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4548CE102AC44F4C000940B9 /* TabCustomCell.xib */; };
+		45D546182AC64EC8005A47D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D546172AC64EC8005A47D1 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,6 @@
 		4529BD3D2AC4990500F4A84E /* CustomNibCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNibCell.swift; sourceTree = "<group>"; };
 		4529BD3E2AC4990500F4A84E /* CustomNibCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNibCell.xib; sourceTree = "<group>"; };
 		4529BD422AC49DC800F4A84E /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
-		4529BD442AC4B0C600F4A84E /* MainStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStory.swift; sourceTree = "<group>"; };
 		4529BD482AC4B54000F4A84E /* TeamDetalisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetalisViewModel.swift; sourceTree = "<group>"; };
 		4529BD4C2AC4B5B700F4A84E /* TeamDetalisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetalisViewController.swift; sourceTree = "<group>"; };
 		4529BD4D2AC4B5B700F4A84E /* TeamDetalisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamDetalisViewController.xib; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		4548CE0C2AC44EF3000940B9 /* TabSportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSportViewModel.swift; sourceTree = "<group>"; };
 		4548CE0F2AC44F4C000940B9 /* TabCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCustomCell.swift; sourceTree = "<group>"; };
 		4548CE102AC44F4C000940B9 /* TabCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabCustomCell.xib; sourceTree = "<group>"; };
+		45D546172AC64EC8005A47D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,7 +254,7 @@
 		4548CE082AC44CC7000940B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4529BD442AC4B0C600F4A84E /* MainStory.swift */,
+				45D546172AC64EC8005A47D1 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D546182AC64EC8005A47D1 /* Main.storyboard in Resources */,
 				4529BD4F2AC4B5B700F4A84E /* TeamDetalisViewController.xib in Resources */,
 				4529BD402AC4990500F4A84E /* CustomNibCell.xib in Resources */,
 				4548CE122AC44F4C000940B9 /* TabCustomCell.xib in Resources */,
@@ -371,7 +372,6 @@
 				450A2E6E2AC6338C0088C168 /* APIConstant.swift in Sources */,
 				4548CE112AC44F4C000940B9 /* TabCustomCell.swift in Sources */,
 				4548CE072AC44CA7000940B9 /* NetworkServies.swift in Sources */,
-				4529BD452AC4B0C600F4A84E /* MainStory.swift in Sources */,
 				4548CE0D2AC44EF3000940B9 /* TabSportViewModel.swift in Sources */,
 				4529BD492AC4B54000F4A84E /* TeamDetalisViewModel.swift in Sources */,
 				4529BD3B2AC498A300F4A84E /* LeaguesViewModel.swift in Sources */,
@@ -528,7 +528,7 @@
 				INFOPLIST_FILE = SportsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -557,7 +557,7 @@
 				INFOPLIST_FILE = SportsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
