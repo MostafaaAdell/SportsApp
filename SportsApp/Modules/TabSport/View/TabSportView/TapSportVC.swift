@@ -48,4 +48,15 @@ extension TapSportVC: UICollectionViewDataSource , UICollectionViewDelegate{
         
         return cell
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = LeaguesViewController(nibName: K.leaguesViewController, bundle: nil)
+         vc.view.backgroundColor = .white
+         vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+         vc.modalPresentationStyle = .fullScreen
+         self.present(vc, animated: true, completion: nil)
+
+        
+    }
 }

@@ -39,6 +39,7 @@
 		450A2E6D2AC6338C0088C168 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		450A2E6F2AC637720088C168 /* FootballModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballModel.swift; sourceTree = "<group>"; };
 		45131EE02AC6666D00F0131C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4525AD7F2AC6746B00A38E74 /* SportsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = SportsApp.app; path = "/Users/mustafa/Desktop/iOS Project Swift/SportsApp/build/Debug-iphoneos/SportsApp.app"; sourceTree = "<absolute>"; };
 		4529BD362AC4988300F4A84E /* LeaguesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewController.swift; sourceTree = "<group>"; };
 		4529BD372AC4988300F4A84E /* LeaguesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaguesViewController.xib; sourceTree = "<group>"; };
 		4529BD3A2AC498A300F4A84E /* LeaguesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewModel.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		4529BD482AC4B54000F4A84E /* TeamDetalisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetalisViewModel.swift; sourceTree = "<group>"; };
 		4529BD4C2AC4B5B700F4A84E /* TeamDetalisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetalisViewController.swift; sourceTree = "<group>"; };
 		4529BD4D2AC4B5B700F4A84E /* TeamDetalisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamDetalisViewController.xib; sourceTree = "<group>"; };
-		4548CDE32AC44AB7000940B9 /* SportsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = SportsApp.app; path = "/Users/mustafa/Desktop/iOS Project Swift/SportsApp/build/Debug-iphoneos/SportsApp.app"; sourceTree = "<absolute>"; };
 		4548CDE62AC44AB7000940B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4548CDE82AC44AB7000940B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4548CDF02AC44AB7000940B9 /* SportsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsApp.xcdatamodel; sourceTree = "<group>"; };
@@ -351,7 +351,7 @@
 			);
 			name = SportsApp;
 			productName = SportsApp;
-			productReference = 4548CDE32AC44AB7000940B9 /* SportsApp.app */;
+			productReference = 4525AD7F2AC6746B00A38E74 /* SportsApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
