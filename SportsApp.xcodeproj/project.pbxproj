@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		450A2E6E2AC6338C0088C168 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A2E6D2AC6338C0088C168 /* APIConstant.swift */; };
 		450A2E702AC637730088C168 /* FootballModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A2E6F2AC637720088C168 /* FootballModel.swift */; };
+		45131EE12AC6666D00F0131C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45131EDF2AC6666D00F0131C /* Main.storyboard */; };
 		4529BD382AC4988300F4A84E /* LeaguesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529BD362AC4988300F4A84E /* LeaguesViewController.swift */; };
 		4529BD392AC4988300F4A84E /* LeaguesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4529BD372AC4988300F4A84E /* LeaguesViewController.xib */; };
 		4529BD3B2AC498A300F4A84E /* LeaguesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529BD3A2AC498A300F4A84E /* LeaguesViewModel.swift */; };
@@ -29,12 +30,12 @@
 		4548CE0D2AC44EF3000940B9 /* TabSportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548CE0C2AC44EF3000940B9 /* TabSportViewModel.swift */; };
 		4548CE112AC44F4C000940B9 /* TabCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548CE0F2AC44F4C000940B9 /* TabCustomCell.swift */; };
 		4548CE122AC44F4C000940B9 /* TabCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4548CE102AC44F4C000940B9 /* TabCustomCell.xib */; };
-		45D546182AC64EC8005A47D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D546172AC64EC8005A47D1 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		450A2E6D2AC6338C0088C168 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		450A2E6F2AC637720088C168 /* FootballModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballModel.swift; sourceTree = "<group>"; };
+		45131EE02AC6666D00F0131C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4529BD362AC4988300F4A84E /* LeaguesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewController.swift; sourceTree = "<group>"; };
 		4529BD372AC4988300F4A84E /* LeaguesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaguesViewController.xib; sourceTree = "<group>"; };
 		4529BD3A2AC498A300F4A84E /* LeaguesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewModel.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		4548CE0C2AC44EF3000940B9 /* TabSportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSportViewModel.swift; sourceTree = "<group>"; };
 		4548CE0F2AC44F4C000940B9 /* TabCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCustomCell.swift; sourceTree = "<group>"; };
 		4548CE102AC44F4C000940B9 /* TabCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabCustomCell.xib; sourceTree = "<group>"; };
-		45D546172AC64EC8005A47D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45131EDE2AC6666D00F0131C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45131EDF2AC6666D00F0131C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4529BD322AC497EC00F4A84E /* Leagues */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +187,7 @@
 			children = (
 				4529BD412AC49DB000F4A84E /* Constants */,
 				4548CDFD2AC44AD4000940B9 /* Supported Files */,
-				4548CE082AC44CC7000940B9 /* View */,
+				45131EDE2AC6666D00F0131C /* View */,
 				4548CE042AC44C54000940B9 /* Services */,
 				4548CDFF2AC44AF1000940B9 /* Models */,
 				4548CDFE2AC44AE4000940B9 /* Modules */,
@@ -249,14 +257,6 @@
 				4548CE062AC44CA7000940B9 /* NetworkServies.swift */,
 			);
 			path = NetworkServices;
-			sourceTree = "<group>";
-		};
-		4548CE082AC44CC7000940B9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				45D546172AC64EC8005A47D1 /* Main.storyboard */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		4548CE092AC44D23000940B9 /* TabSport */ = {
@@ -352,7 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45D546182AC64EC8005A47D1 /* Main.storyboard in Resources */,
+				45131EE12AC6666D00F0131C /* Main.storyboard in Resources */,
 				4529BD4F2AC4B5B700F4A84E /* TeamDetalisViewController.xib in Resources */,
 				4529BD402AC4990500F4A84E /* CustomNibCell.xib in Resources */,
 				4548CE122AC44F4C000940B9 /* TabCustomCell.xib in Resources */,
@@ -391,6 +391,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		45131EDF2AC6666D00F0131C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45131EE02AC6666D00F0131C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		4548CDF42AC44AB9000940B9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
