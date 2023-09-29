@@ -16,6 +16,7 @@ struct K {
     
     //Custom Team Detalis
     static let customNibTeamDetalis = "TeamDetalisViewController"
+    static let leaguesViewController = "LeaguesViewController"
     
     
 }

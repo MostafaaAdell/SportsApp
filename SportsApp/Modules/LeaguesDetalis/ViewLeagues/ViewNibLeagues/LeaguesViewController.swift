@@ -74,9 +74,8 @@ extension LeaguesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       
         let vc = TeamDetalisViewController(nibName: K.customNibTeamDetalis, bundle: nil)
-        vc.view.backgroundColor = .white
-
-        vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+         vc.view.backgroundColor = .white
+         vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          vc.modalPresentationStyle = .fullScreen
          self.present(vc, animated: true, completion: nil)
      //   self.navigationController?.pushViewController(vc, animated: true)
