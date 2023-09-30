@@ -8,4 +8,5 @@ source 'https://github.com/CocoaPods/Specs.git'
 
   # Pods for SportsApp
  pod 'Alamofire'
+ pod 'Kingfisher', '~> 7.0'
 end
