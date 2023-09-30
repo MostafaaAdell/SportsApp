@@ -18,7 +18,7 @@ class NetworkServices: NetworkServiceDelegate {
     
     func fetchDataFromAPIForFootball(Handler: @escaping (getLeagues?,Error?) -> Void) {
         
-        let url = URL(string: apiURL.URlAApi)
+        let url = URL(string: apiURL.URlApi)
         guard let validUrl = url else{Handler(nil,nil);return }
         
         let request = URLRequest(url: validUrl)

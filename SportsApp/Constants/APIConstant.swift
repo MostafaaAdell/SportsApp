@@ -21,7 +21,7 @@ struct APIConstant{
      private var leagueId:Int?
      private var teamId:Int?
     
-    var URlAApi: String {
+    var URlApi: String {
         get{
             
             return "\(mainSportsURl)\(sportType)\(met)\(ApiKey)"
@@ -70,7 +70,7 @@ struct APIConstant{
             case .allLeagues: return "/?met=Leagues&APIkey="
                 
             case .getUpcomingEvents (let leagueID): return "?met=Fixtures&leagueId=\(leagueID)&from=\(Date.getCurrentDate())&to=\(Date.getNextYeatDate())&APIkey="
-            case .getLatestResults (let leagueID): return "?met=Fixtures&leagueId=\(leagueID)&from=\(Date.getLastYeatDate())&to=\(Date.getCurrentDate())&APIkey="
+            case .getLatestResults (let leagueID): return "?met=Fixtures&leagueId=\(leagueID)&from=\(Date.getLastYearDate())&to=\(Date.getCurrentDate())&APIkey="
             case .getTeamDetails (let teamID): return "?&met=Teams&teamId=\(teamID)&APIkey="
             }
         }
@@ -86,7 +86,7 @@ struct APIConstant{
 //MARK: - Applying protocol for get Url
 extension APIConstant: ApiPreparationDelegate {
     func prepareAPIUrl() -> String {
-        return URlAApi
+        return URlApi
     }
     
     
@@ -114,7 +114,7 @@ extension Date {
 
         }
     
-    static func getLastYeatDate() -> String {
+    static func getLastYearDate() -> String {
             
         let calendar = Calendar.current
         let dateFormatter = DateFormatter()
