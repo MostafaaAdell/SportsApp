@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol ApiPreparationDelegate{
+    func prepareAPIUrl() -> String
+}
+
 struct APIConstant{
     
     
@@ -23,6 +27,8 @@ struct APIConstant{
             return "\(mainSportsURl)\(sportType)\(met)\(ApiKey)"
         }
     }
+    
+    //init with to type of Sport
     init(sportType:String ){
         
         self.sportType = sportType
@@ -34,6 +40,8 @@ struct APIConstant{
         self.met = Met.getUpcomingEvents(leagueIdWithUpcomiingEvent).order
         self.leagueId = leagueIdWithUpcomiingEvent
     }
+    
+    //init with sport type and league ID updated event
     init(sportType:String , leagueIdWithLatestEvent:Int){
         
         self.sportType = sportType
@@ -41,6 +49,7 @@ struct APIConstant{
         self.leagueId = leagueIdWithLatestEvent
     }
     
+    //init with sport type and league ID for latest Event
     init(sportType:String , teamId:Int){
         
         self.sportType = sportType
@@ -49,6 +58,7 @@ struct APIConstant{
     }
    
    
+    // switch to choose the type of Getting Api
     enum Met {
         case allLeagues
         case getUpcomingEvents(Int)
@@ -71,6 +81,18 @@ struct APIConstant{
 
     
 }
+
+
+//MARK: - Applying protocol for get Url
+extension APIConstant: ApiPreparationDelegate {
+    func prepareAPIUrl() -> String {
+        return URlAApi
+    }
+    
+    
+}
+
+
 // MARK: ADding extenision to The Date To Get Current ANd Next And Last Year
 extension Date {
     static func getCurrentDate() -> String {
