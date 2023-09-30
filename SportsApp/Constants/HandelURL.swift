@@ -11,7 +11,7 @@ protocol ApiPreparationDelegate{
     func prepareAPIUrl() -> String
 }
 
-struct APIConstant{
+struct HandelURL{
     
     
     private  let ApiKey = "10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499"
@@ -84,7 +84,7 @@ struct APIConstant{
 
 
 //MARK: - Applying protocol for get Url
-extension APIConstant: ApiPreparationDelegate {
+extension HandelURL: ApiPreparationDelegate {
     func prepareAPIUrl() -> String {
         return URlApi
     }

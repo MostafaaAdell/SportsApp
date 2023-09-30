@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct getLeagues: Codable {
+struct GetAllLeagues: Codable {
     let success: Int
     let result: [Leagues]
 }
