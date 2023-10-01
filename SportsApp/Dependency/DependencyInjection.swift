@@ -55,19 +55,19 @@ struct DependencyProvider{
     
     
     
-    static var tabViewSports:TabViewModelProtocol{
-        
-       return TabViewModel(netWorkServies: NetworkServicesForLeagues)
-    }
- 
-    
-    
-
-    static var tabViewController:TapSportVC {
-        let vc = UIStoryboard(name: "TapSportVC", bundle: nil).instantiateInitialViewController() as! TapSportVC
-        
-        
-        return vc
-    }
+//    static var tabViewSports:TabViewModelProtocol{
+//        
+//       return TabViewModel(netWorkServies: NetworkServicesForLeagues)
+//    }
+// 
+//    
+//    
+//
+//    static var tabViewController:TapSportVC {
+//        let vc = UIStoryboard(name: "TapSportVC", bundle: nil).instantiateInitialViewController() as! TapSportVC
+//        
+//        
+//        return vc
+//    }
 
 }
