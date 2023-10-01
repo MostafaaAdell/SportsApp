@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeamDetalisViewController" customModule="SportsApp" customModuleProvider="target">
+            <connections>
+                <outlet property="redirerctButton" destination="LIN-ih-OaS" id="IvW-xM-pQL"/>
+                <outlet property="stadiumImageView" destination="GtK-zu-JW1" id="hxk-LF-3xB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqf-bL-F3i" userLabel="TopView">
+                    <rect key="frame" x="0.0" y="59" width="393" height="263.33333333333331"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="villa-park-guide" translatesAutoresizingMaskIntoConstraints="NO" id="GtK-zu-JW1" userLabel="StadiumImageView">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="263.33333333333331"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBound" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man utd logo 2" translatesAutoresizingMaskIntoConstraints="NO" id="ydP-BN-uR8" userLabel="TeamLogoImageView">
+                            <rect key="frame" x="20" y="163.33333333333334" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="1f8-un-8Tr"/>
+                                <constraint firstAttribute="width" constant="80" id="4hV-mM-58u"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u60-kY-RQf" userLabel="LabelView">
+                            <rect key="frame" x="110" y="174.33333333333334" width="283" height="58"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gT4-AO-pxR">
+                                    <rect key="frame" x="0.0" y="0.0" width="283" height="58"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Man UTD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="746-Nd-taV" userLabel="TeamName">
+                                            <rect key="frame" x="0.0" y="0.0" width="283" height="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old Trafford" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCI-XP-M3k" userLabel="StadiumName">
+                                            <rect key="frame" x="0.0" y="33.999999999999972" width="283" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="gT4-AO-pxR" secondAttribute="bottom" id="JZZ-fz-U8s"/>
+                                <constraint firstAttribute="trailing" secondItem="gT4-AO-pxR" secondAttribute="trailing" id="Wmr-Dn-iEh"/>
+                                <constraint firstItem="gT4-AO-pxR" firstAttribute="leading" secondItem="u60-kY-RQf" secondAttribute="leading" id="b4m-in-m0C"/>
+                                <constraint firstItem="gT4-AO-pxR" firstAttribute="top" secondItem="u60-kY-RQf" secondAttribute="top" id="zJq-rF-01F"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="u60-kY-RQf" firstAttribute="width" secondItem="ydP-BN-uR8" secondAttribute="height" multiplier="283:80" id="3qk-Iq-PAh"/>
+                        <constraint firstAttribute="trailing" secondItem="GtK-zu-JW1" secondAttribute="trailing" id="7eP-n9-rEU"/>
+                        <constraint firstItem="u60-kY-RQf" firstAttribute="centerY" secondItem="ydP-BN-uR8" secondAttribute="centerY" id="Cfy-QA-nFR"/>
+                        <constraint firstItem="GtK-zu-JW1" firstAttribute="leading" secondItem="bqf-bL-F3i" secondAttribute="leading" id="OGO-jJ-Mw3"/>
+                        <constraint firstItem="u60-kY-RQf" firstAttribute="leading" secondItem="ydP-BN-uR8" secondAttribute="trailing" constant="10" id="Qbw-yl-CFj"/>
+                        <constraint firstItem="GtK-zu-JW1" firstAttribute="top" secondItem="bqf-bL-F3i" secondAttribute="top" id="YOX-14-apF"/>
+                        <constraint firstAttribute="bottom" secondItem="ydP-BN-uR8" secondAttribute="bottom" constant="20" id="Zbj-sE-VVw"/>
+                        <constraint firstAttribute="width" secondItem="bqf-bL-F3i" secondAttribute="height" multiplier="433:290" id="fab-6h-Le7"/>
+                        <constraint firstAttribute="trailing" secondItem="u60-kY-RQf" secondAttribute="trailing" id="k8I-jZ-uzR"/>
+                        <constraint firstItem="ydP-BN-uR8" firstAttribute="leading" secondItem="bqf-bL-F3i" secondAttribute="leading" constant="20" id="vMY-0g-96r"/>
+                        <constraint firstAttribute="bottom" secondItem="GtK-zu-JW1" secondAttribute="bottom" id="yvm-Dm-ru1"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJW-Dk-B8f" userLabel="TshirtView">
+                    <rect key="frame" x="25" y="337.33333333333331" width="343" height="249.99999999999994"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manchester-united-f-c-old-trafford-premier-league-third-jersey-manchester-united-e41fc93682a1c092fd93cfa9e024d925" translatesAutoresizingMaskIntoConstraints="NO" id="PZI-UF-XHR" userLabel="TeamTshirtImageView">
+                            <rect key="frame" x="89" y="35" width="165" height="180"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="165" id="Ogb-A3-um1"/>
+                                <constraint firstAttribute="height" constant="180" id="RUO-03-5dv"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Kit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clo-pW-JGv">
+                            <rect key="frame" x="10" y="10" width="100" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="9mJ-Xz-TtE"/>
+                                <constraint firstAttribute="width" constant="100" id="nXz-82-yqU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <constraints>
+                        <constraint firstItem="Clo-pW-JGv" firstAttribute="leading" secondItem="JJW-Dk-B8f" secondAttribute="leading" constant="10" id="9CD-E4-FKa"/>
+                        <constraint firstItem="Clo-pW-JGv" firstAttribute="top" secondItem="JJW-Dk-B8f" secondAttribute="top" constant="10" id="B40-Fx-HFJ"/>
+                        <constraint firstItem="PZI-UF-XHR" firstAttribute="centerX" secondItem="JJW-Dk-B8f" secondAttribute="centerX" id="FjF-Xf-WZk"/>
+                        <constraint firstItem="PZI-UF-XHR" firstAttribute="centerY" secondItem="JJW-Dk-B8f" secondAttribute="centerY" id="Z1G-Qb-pe0"/>
+                        <constraint firstAttribute="height" constant="250" id="sKI-ho-c1X"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBound" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpT-CE-wnH" userLabel="SocialMediaView">
+                    <rect key="frame" x="60" y="723" width="273" height="35"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2gk-1P-O0R" userLabel="SocialMediaStack">
+                            <rect key="frame" x="0.0" y="0.0" width="273" height="35"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Platform=Facebook, Color=Original" id="PWo-ow-WDr">
+                                    <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Platform=Pinterest, Color=Original" id="oA9-Cd-whZ">
+                                    <rect key="frame" x="68.333333333333343" y="0.0" width="68.333333333333343" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Platform=VK, Color=Original" id="uvO-p7-wqn">
+                                    <rect key="frame" x="136.66666666666666" y="0.0" width="68" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector-2" id="Ns5-R5-KBn">
+                                    <rect key="frame" x="204.66666666666666" y="0.0" width="68.333333333333343" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="2gk-1P-O0R" secondAttribute="bottom" id="5Nc-fO-Ld0"/>
+                        <constraint firstAttribute="trailing" secondItem="2gk-1P-O0R" secondAttribute="trailing" id="81h-qP-Cio"/>
+                        <constraint firstAttribute="height" constant="35" id="96b-n2-kgb"/>
+                        <constraint firstItem="2gk-1P-O0R" firstAttribute="leading" secondItem="TpT-CE-wnH" secondAttribute="leading" id="BKi-wQ-L44"/>
+                        <constraint firstItem="2gk-1P-O0R" firstAttribute="top" secondItem="TpT-CE-wnH" secondAttribute="top" id="HCa-6f-Twg"/>
+                        <constraint firstAttribute="trailing" secondItem="2gk-1P-O0R" secondAttribute="trailing" id="IGO-0j-rbj"/>
+                        <constraint firstItem="2gk-1P-O0R" firstAttribute="top" secondItem="TpT-CE-wnH" secondAttribute="top" id="VrM-AQ-86S"/>
+                        <constraint firstItem="2gk-1P-O0R" firstAttribute="leading" secondItem="TpT-CE-wnH" secondAttribute="leading" id="cLN-BN-hY3"/>
+                        <constraint firstAttribute="bottom" secondItem="2gk-1P-O0R" secondAttribute="bottom" id="qQz-rZ-0ly"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UjS-44-E6f" userLabel="WebsiteLinkView">
+                    <rect key="frame" x="75" y="625.33333333333337" width="243" height="67.666666666666629"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIN-ih-OaS">
+                            <rect key="frame" x="30" y="7.9999999999999964" width="183" height="51.666666666666657"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="rectangle.portrait.and.arrow.right.fill" catalog="system" title="Official Website">
+                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBound" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <constraints>
+                        <constraint firstItem="LIN-ih-OaS" firstAttribute="leading" secondItem="UjS-44-E6f" secondAttribute="leading" constant="30" id="7E6-Ah-Ge3"/>
+                        <constraint firstAttribute="trailing" secondItem="LIN-ih-OaS" secondAttribute="trailing" constant="30" id="Cra-vf-UNP"/>
+                        <constraint firstItem="LIN-ih-OaS" firstAttribute="top" secondItem="UjS-44-E6f" secondAttribute="top" constant="8" id="PuD-Ro-1ZC"/>
+                        <constraint firstAttribute="bottom" secondItem="LIN-ih-OaS" secondAttribute="bottom" constant="8" id="WDk-kN-WUw"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBound" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="JJW-Dk-B8f" firstAttribute="height" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="height" priority="999" constant="100" id="94B-cB-uie"/>
+                <constraint firstItem="UjS-44-E6f" firstAttribute="top" secondItem="JJW-Dk-B8f" secondAttribute="bottom" constant="38" id="D4S-pO-EnQ"/>
+                <constraint firstAttribute="trailing" secondItem="bqf-bL-F3i" secondAttribute="trailing" id="GZ1-iE-7Uh"/>
+                <constraint firstItem="bqf-bL-F3i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Jk5-8c-XRQ"/>
+                <constraint firstItem="TpT-CE-wnH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="MNo-d5-B7b"/>
+                <constraint firstItem="TpT-CE-wnH" firstAttribute="top" secondItem="UjS-44-E6f" secondAttribute="bottom" constant="30" id="Psi-GA-hmg"/>
+                <constraint firstItem="JJW-Dk-B8f" firstAttribute="top" secondItem="bqf-bL-F3i" secondAttribute="bottom" constant="15" id="SoV-RF-U65"/>
+                <constraint firstItem="JJW-Dk-B8f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="dH6-76-A2c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UjS-44-E6f" secondAttribute="trailing" constant="75" id="eG2-ee-EIv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JJW-Dk-B8f" secondAttribute="trailing" constant="25" id="esr-z9-35e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TpT-CE-wnH" secondAttribute="trailing" constant="60" id="mL7-Zg-QLI"/>
+                <constraint firstItem="bqf-bL-F3i" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="q93-8U-GNY"/>
+                <constraint firstItem="UjS-44-E6f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="75" id="v9i-tW-Zhi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TpT-CE-wnH" secondAttribute="bottom" constant="60" id="yGX-Sg-Cte"/>
+            </constraints>
+            <point key="canvasLocation" x="93.89312977099236" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Platform=Facebook, Color=Original" width="48" height="48"/>
+        <image name="Platform=Pinterest, Color=Original" width="48" height="48"/>
+        <image name="Platform=VK, Color=Original" width="48" height="48"/>
+        <image name="Vector-2" width="48" height="48"/>
+        <image name="man utd logo 2" width="120" height="120"/>
+        <image name="manchester-united-f-c-old-trafford-premier-league-third-jersey-manchester-united-e41fc93682a1c092fd93cfa9e024d925" width="1280" height="1280"/>
+        <image name="rectangle.portrait.and.arrow.right.fill" catalog="system" width="128" height="108"/>
+        <image name="villa-park-guide" width="890" height="395"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -9,16 +9,42 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TabCustomCell" customModule="SportsApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="255" height="213"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TabCustomCell" id="gTV-IL-0wX" customClass="TabCustomCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="102" height="79"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="255" height="213"/>
+                <rect key="frame" x="0.0" y="0.0" width="102" height="79"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vko-Ur-uRc">
+                        <rect key="frame" x="0.0" y="0.0" width="102" height="79"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soccer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8F1-DT-cxv">
+                        <rect key="frame" x="18" y="27.666666666666671" width="66.333333333333343" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="255" height="213"/>
-            <point key="canvasLocation" x="150.38167938931298" y="77.112676056338032"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Vko-Ur-uRc" secondAttribute="bottom" id="1iR-iw-mXB"/>
+                <constraint firstItem="Vko-Ur-uRc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7bs-dG-6dV"/>
+                <constraint firstItem="8F1-DT-cxv" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="eBW-2f-Xul"/>
+                <constraint firstItem="8F1-DT-cxv" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="iLm-gT-0YH"/>
+                <constraint firstAttribute="trailing" secondItem="Vko-Ur-uRc" secondAttribute="trailing" id="onQ-Mo-rPW"/>
+                <constraint firstItem="Vko-Ur-uRc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="uX9-ls-NeX"/>
+            </constraints>
+            <size key="customSize" width="102" height="79"/>
+            <connections>
+                <outlet property="imgView" destination="Vko-Ur-uRc" id="tON-2A-q9G"/>
+                <outlet property="myLabel" destination="8F1-DT-cxv" id="Y13-51-Rxj"/>
+            </connections>
+            <point key="canvasLocation" x="184.73282442748092" y="29.225352112676056"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="1" width="1573" height="1200"/>
+    </resources>
 </document>
