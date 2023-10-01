@@ -32,6 +32,15 @@ struct K {
     static let countryName = "countryName"
     static let countryLogo = "countryLogo"
     static let countryKey = "countryKey"
+    //Custom Event League Constat
+    static let customNibEvent = "eventCell"
+    static let customNibLatestEvent = "latestEventCell"
+    static let customNibTeams = "TeamsCell"
+    static let customNibHeaderView = "MyHeaderView"
+    
+    //Custom TapSports Constat
+    static let customNibTapSports = "TabCustomCell"
+
     
     
 }
