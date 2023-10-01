@@ -60,14 +60,16 @@ struct DependencyProvider{
 //       return TabViewModel(netWorkServies: NetworkServicesForLeagues)
 //    }
 // 
-//    
-//    
+    
+    
 //
-//    static var tabViewController:TapSportVC {
-//        let vc = UIStoryboard(name: "TapSportVC", bundle: nil).instantiateInitialViewController() as! TapSportVC
-//        
-//        
-//        return vc
+//    static var tabViewController:LeaguesViewController {
+////        let vc = LeaguesViewController(nibName: K.leaguesViewController, bundle: nil)
+////         vc.viewFootballLeague = tabViewSports
+////         vc.view.backgroundColor = .white
+////         vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+////         vc.modalPresentationStyle = .fullScreen
+////        return vc
 //    }
 
 }

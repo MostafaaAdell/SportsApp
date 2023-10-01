@@ -10,10 +10,12 @@ import UIKit
 class LeaguesViewController: UIViewController {
 
     @IBOutlet weak var leaguesTableView: UITableView!
+    
+    var viewFootballLeague:TabViewModelProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
          configureLeagueTableView()
-
+        viewFootballLeague?.getLeaguesFromApi()
         // Do any additional setup after loading the view.
     }
 
