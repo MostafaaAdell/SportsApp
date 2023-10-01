@@ -11,36 +11,37 @@ class TapSportVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var myCollection: UICollectionView!
     
-    // MARK: - ConfigureCollectionView
-    func configureCollectionView(){
-        myCollection.delegate = self
-        myCollection.dataSource = self
-        myCollection.register(UINib(nibName: "TabCustomCell", bundle: nil), forCellWithReuseIdentifier: "TabCustomCell")
-    }
-    
+
     // MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        self.title = "Sports"
-
+        
         
     }
-
+    
+    // MARK: - ConfigureCollectionView
+    func configureCollectionView(){
+        myCollection.delegate = self
+        myCollection.dataSource = self
+        myCollection.register(UINib(nibName: K.customNibTapSports, bundle: nil), forCellWithReuseIdentifier: K.customNibTapSports)
+        
+//        myCollection.register(UINib(nibName: K.customNibHeaderView, bundle: nil), forCellWithReuseIdentifier: K.customNibHeaderView)
+    }
 }
 
     // MARK: - Extension
 extension TapSportVC: UICollectionViewDataSource , UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        Sports.sports.count
     }
         
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TabCustomCell", for: indexPath) as! TabCustomCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.customNibTapSports , for: indexPath) as! TabCustomCell
         
-        let imageName = "1"
-        let labelText = "Football"
+        let labelText =  Sports.sports[indexPath.item % Sports.sports.count]
+        let imageName = Sports.sportsImg[indexPath.item % Sports.sportsImg.count]
         
         cell.configure(with: imageName , titleText: labelText)
         cell.layer.cornerRadius = 15
