@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TeamsCell" id="gTV-IL-0wX" customClass="TeamsCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="163" height="170"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="163" height="170"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NxK-ep-Nqh">
+                        <rect key="frame" x="0.0" y="50" width="163" height="120"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Man United" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeC-mb-CM7">
+                                <rect key="frame" x="40.666666666666664" y="92" width="81.666666666666686" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man utd logo 2" translatesAutoresizingMaskIntoConstraints="NO" id="3op-ew-lrp">
+                                <rect key="frame" x="26" y="-28" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="9YR-Pi-RHg"/>
+                                    <constraint firstAttribute="width" constant="110" id="RxV-kc-Xqt"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509804249999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="eeC-mb-CM7" firstAttribute="top" secondItem="3op-ew-lrp" secondAttribute="bottom" constant="10" id="K32-el-FLG"/>
+                            <constraint firstItem="3op-ew-lrp" firstAttribute="leading" secondItem="NxK-ep-Nqh" secondAttribute="leading" constant="26" id="LKc-ze-dtR"/>
+                            <constraint firstItem="eeC-mb-CM7" firstAttribute="centerX" secondItem="NxK-ep-Nqh" secondAttribute="centerX" id="Mby-du-aAI"/>
+                            <constraint firstAttribute="trailing" secondItem="3op-ew-lrp" secondAttribute="trailing" constant="27" id="TAQ-dm-cVs"/>
+                            <constraint firstAttribute="bottom" secondItem="eeC-mb-CM7" secondAttribute="bottom" constant="10" id="dMP-Y4-nas"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="NxK-ep-Nqh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Dwq-bc-PR4"/>
+                <constraint firstAttribute="trailing" secondItem="NxK-ep-Nqh" secondAttribute="trailing" id="Thy-Oe-54m"/>
+                <constraint firstItem="NxK-ep-Nqh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="50" id="fay-da-uZ1"/>
+                <constraint firstAttribute="bottom" secondItem="NxK-ep-Nqh" secondAttribute="bottom" id="ppS-zS-gSG"/>
+            </constraints>
+            <size key="customSize" width="163" height="170"/>
+            <connections>
+                <outlet property="myView" destination="NxK-ep-Nqh" id="PZi-8a-zIp"/>
+                <outlet property="teamLogo" destination="3op-ew-lrp" id="nkx-nt-T82"/>
+                <outlet property="teamNameLabel" destination="eeC-mb-CM7" id="419-Ha-DPV"/>
+            </connections>
+            <point key="canvasLocation" x="92.36641221374046" y="73.239436619718319"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="man utd logo 2" width="120" height="120"/>
+    </resources>
+</document>
