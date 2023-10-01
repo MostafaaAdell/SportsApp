@@ -108,7 +108,6 @@ class LeaguesCoreData{
     //Load All Leagues Data
     func loadAllLeagueData(loadLeagueList:[Leagues]){
         deleteLeagueCoreData()
-        var count = 0
         for league in loadLeagueList{
             
             setLeaguesDetalis(leagueKey: league.leagueKey, leagueName: league.leagueName, leagueLogo: league.leagueLogo, countryName: league.countryName, countryLogo: league.countryLogo, countryKey: league.countryKey)

@@ -53,19 +53,21 @@ struct DependencyProvider{
         return NetworkServices(setUrl: ApiTeamsDetalistSports)
     }
     
+    
+    
+    static var tabViewSports:TabViewModelProtocol{
+        
+       return TabViewModel(netWorkServies: NetworkServicesForLeagues)
+    }
  
     
     
-//    static var dataPresenterCall:dataPresenterProtcol{
-//
-//       return DataPresenter(netWorkServies: services)
-//    }
-//
-//    static var dataViewController:DataViewController {
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! DataViewController
-//
-//        vc.dataPresenter = dataPresenterCall
-//
-//        return vc
-//
+
+    static var tabViewController:TapSportVC {
+        let vc = UIStoryboard(name: "TapSportVC", bundle: nil).instantiateInitialViewController() as! TapSportVC
+        
+        
+        return vc
+    }
+
 }
