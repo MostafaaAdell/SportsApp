@@ -8,5 +8,7 @@
 import Foundation
 
 struct Sports {
-    let sports = ["",]
+  static  let sports = ["Football", "Basketball", "MotorSport", "Fighting", "Baseball", "American Football","Ice Hockey" , "Gulf"]
+    
+  static  let sportsImg = ["Football", "Basketball", "MotorSport", "Fighting", "Baseball", "American Football","Ice Hockey" , "Gulf"]
 }
