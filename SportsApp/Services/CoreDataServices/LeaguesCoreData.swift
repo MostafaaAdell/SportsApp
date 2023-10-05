@@ -69,7 +69,6 @@ class LeaguesCoreData{
                 guard let leagueLogo  = league.value(forKey: K.leagueLogo)as? String else {return nil}
                 guard let countryName  = league.value(forKey: K.countryName)as? String else {return nil}
                 guard let countryLogo  = league.value(forKey: K.countryLogo)as? String else {return nil}
-                guard let countryKey  = league.value(forKey: K.countryKey) as? Int else {return nil}
                 
                 let leauesValues = Leagues(leagueKey: leagueKey, leagueName: leagueName, countryKey: countryKey, countryName: countryName, leagueLogo: leagueLogo, countryLogo: countryLogo)
                 leagueArray.append(leauesValues)

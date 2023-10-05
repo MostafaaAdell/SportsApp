@@ -16,11 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
-//        window = UIWindow(windowScene: scene)
-//        let rootViewController = LeaguesVC()
-//        window?.rootViewController = UINavigationController(rootViewController: rootViewController)
-//        window?.makeKeyAndVisible()
+        //guard let _ = (scene as? UIWindowScene) else { return }
+        
+        
+        guard let windowScene = scene as? UIWindowScene else { return }
+           
+           // Create a new UIWindow with the provided window scene
+           let window = UIWindow(windowScene: windowScene)
+        customNavigationCOntroller(window: window)
+           
+                  
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -52,6 +57,44 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+    }
+    
+    
+    func customNavigationCOntroller(window:UIWindow){
+        
+        
+        // Access the main storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Instantiate the initial view controller from the storyboard
+        let rootViewController = storyboard.instantiateInitialViewController()
+           if let navigationController = rootViewController as? UINavigationController {
+            let navigationBarAppearance = navigationController.navigationBar
+ 
+            navigationBarAppearance.tintColor = UIColor.black
+            navigationBarAppearance.setBackgroundImage(UIImage(), for: .default)
+            navigationBarAppearance.shadowImage = UIImage()
+            navigationBarAppearance.isTranslucent = true
+            
+
+            
+            // Set the font and text attributes for the navigation bar title
+            let titleTextAttributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.black, // Set the text color to white
+                .font: UIFont.systemFont(ofSize: 22, weight: .bold) // Set the font and size
+            ]
+          
+            navigationBarAppearance.titleTextAttributes = titleTextAttributes
+        }
+        
+        // Set the root view controller of the window
+        window.rootViewController = rootViewController
+        
+        // Make the window key and visible
+        window.makeKeyAndVisible()
+        
+        // Assign the window to the scene's window property
+        self.window = window
     }
 
 

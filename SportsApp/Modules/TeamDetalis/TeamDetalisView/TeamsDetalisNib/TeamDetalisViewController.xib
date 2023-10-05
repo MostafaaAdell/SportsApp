@@ -12,6 +12,9 @@
             <connections>
                 <outlet property="redirerctButton" destination="LIN-ih-OaS" id="IvW-xM-pQL"/>
                 <outlet property="stadiumImageView" destination="GtK-zu-JW1" id="hxk-LF-3xB"/>
+                <outlet property="teamLogo" destination="ydP-BN-uR8" id="dnm-8x-z2D"/>
+                <outlet property="teamName" destination="746-Nd-taV" id="BKO-dp-c1R"/>
+                <outlet property="teamStadiumName" destination="iCI-XP-M3k" id="K7Q-bB-h1S"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -171,6 +174,9 @@
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBound" value="YES"/>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="officailWebsiteButton:" destination="-1" eventType="touchUpInside" id="Kuc-ML-8Rn"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray5Color"/>

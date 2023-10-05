@@ -34,43 +34,75 @@ struct DependencyProvider{
     
     
     //Network Call for sports leagues
-    static var NetworkServicesForLeagues:NetworkServiceDelegate{
+    static var networkServicesForLeague:NetworkServiceDelegate{
         return NetworkServices(setUrl: ApiLeaguesSports)
     }
-    
-    //Network Call for sports Upcooming Event
-    static var NetworkServicesForUpcommingEvent:NetworkServiceDelegate{
+    //Network Call for sports leagues
+    static var networkServicesForUpcommingEvent:NetworkServiceDelegate{
         return NetworkServices(setUrl: ApiUpCommingEventSports)
     }
-    
-    //Network Call for sports Latest Event
-    static var NetworkServicesForLatestEvent:NetworkServiceDelegate{
+    //Network Call for sports leagues
+    static var networkServicesForLatestEvent:NetworkServiceDelegate{
         return NetworkServices(setUrl: ApiUpLatestEventSports)
     }
-    
-    //Network Call for sports Team Detalis
-    static var NetworkServicesForTeamDetalis:NetworkServiceDelegate{
+    //Network Call for sports leagues
+    static var networkServicesForTeamDetails:NetworkServiceDelegate{
         return NetworkServices(setUrl: ApiTeamsDetalistSports)
     }
     
     
     
-//    static var tabViewSports:TabViewModelProtocol{
-//        
-//       return TabViewModel(netWorkServies: NetworkServicesForLeagues)
-//    }
-// 
+    //setup Network Detalis To Return Certain Url
+    static var leaguesNetwork:AllLeagueProtocol{
+        
+        return AllLeagues(services: networkServicesForLeague)
+    }
+    static var upCommingEventNetwork:UpCommingEventProtocol{
+        
+        return UpcommingEvent(services: networkServicesForUpcommingEvent)
+
+    }
+    static var latestEventNetwork:LatestEventProtocol{
+        
+       return LatestEvent(services: networkServicesForLatestEvent)
+    }
+    static var teamDetalisNetwork:TeamDetailsProtocol{
+        
+        return TeamDetailsEvent(services: networkServicesForTeamDetails)
+    }
+ 
     
     
-//
-//    static var tabViewController:LeaguesViewController {
-////        let vc = LeaguesViewController(nibName: K.leaguesViewController, bundle: nil)
-////         vc.viewFootballLeague = tabViewSports
-////         vc.view.backgroundColor = .white
-////         vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-////         vc.modalPresentationStyle = .fullScreen
-////        return vc
-//    }
+   //leagues
+    static var leagueViewController:LeaguesViewController {
+        let vc = LeaguesViewController(nibName: K.leaguesViewController, bundle: nil)
+         vc.viewAllLeague = leaguesNetwork
+         vc.view.backgroundColor = .white
+         vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+         vc.modalPresentationStyle = .fullScreen
+        return vc
+    }
+    //Events
+    static var eventForLeagues:LeaguesVC {
+        let storyboard = UIStoryboard(name:K.storyBoardLeagueIdentfier , bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: K.leaguesAllEvent) as! LeaguesVC
+         vc.viewUpcommingEvent = upCommingEventNetwork
+         vc.viewlatestEvent = latestEventNetwork
+         vc.view.backgroundColor = .white
+         vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+         vc.modalPresentationStyle = .fullScreen
+        return vc
+    }
+    //Team Details
+    static var teamDetailsViewController:TeamDetalisViewController {
+        let vc = TeamDetalisViewController(nibName: K.customNibTeamDetalis, bundle: nil)
+         vc.viewTEamDetalis = teamDetalisNetwork
+         vc.view.backgroundColor = .white
+         vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+         vc.modalPresentationStyle = .fullScreen
+        return vc
+    }
+  
 
 }
 
@@ -78,68 +110,6 @@ struct DependencyProvider{
 
 
 
-//import Foundation
-//import Alamofire
-//
-//protocol TabViewModelProtocol{
-//    func getLeaguesFromApi()
-//    func getLeaguesArray ()->GetAllLeagues?
-//    func getNumberOfItem() -> Int?
-//    var handerDataRetrived : (() -> Void)?{get set}
-//
-//}
-//
-//
-//
-//class TabViewModel:TabViewModelProtocol {
-//    var handerDataRetrived: (() -> Void)?
-//
-//
-//
-//
-//    var getAllLeagues: GetAllLeagues? {
-//        didSet{
-//            if let validHander =  handerDataRetrived {
-//                validHander()
-//            }
-//        }
-//    }
-//
-//    var services:NetworkServiceDelegate?
-//
-//
-//
-//    init(netWorkServies:NetworkServiceDelegate){
-//        self.services = netWorkServies
-//    }
-//
-//
-//
-//    func getLeaguesFromApi(){
-//
-//        services?.fetchDataFromAPIForFootball { (data: AFDataResponse<Data?>? , error: Error?)in
-//            if let validData = data?.data{
-//                do{
-//                    let dataRetivied = try JSONDecoder().decode(GetAllLeagues.self, from: validData)
-//                    self.getAllLeagues = dataRetivied
-//                    print(self.getAllLeagues?.result )
-//
-//                }catch let error{print(error.localizedDescription.description)}
-//            }
-//            else{print("there is error in Casting Data")}
-//
-//
-//        }
-//
-//    }
-//
-//    func getLeaguesArray() -> GetAllLeagues? {
-//        return getAllLeagues
-//    }
-//    func getNumberOfItem() -> Int?{
-//        return getAllLeagues?.result.count
-//    }
-//
-//}
+
 
 
