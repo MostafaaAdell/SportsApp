@@ -81,7 +81,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // Set the font and text attributes for the navigation bar title
             let titleTextAttributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: UIColor.black, // Set the text color to white
-                .font: UIFont.systemFont(ofSize: 22, weight: .bold) // Set the font and size
+                .font: UIFont.systemFont(ofSize: 17, weight: .bold) // Set the font and size
             ]
           
             navigationBarAppearance.titleTextAttributes = titleTextAttributes

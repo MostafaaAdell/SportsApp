@@ -11,6 +11,7 @@ struct DependencyProvider{
     static var sportType:String = "football"
     static var leaugeID:Int = 0
     static var teamId:Int = 0
+    static var leagueDetails:Leagues?
     //Leagues
     static var ApiLeaguesSports:ApiPreparationDelegate {
         return HandelURL(sportType: sportType)
@@ -88,6 +89,7 @@ struct DependencyProvider{
         let vc = storyboard.instantiateViewController(withIdentifier: K.leaguesAllEvent) as! LeaguesVC
          vc.viewUpcommingEvent = upCommingEventNetwork
          vc.viewlatestEvent = latestEventNetwork
+         vc.leagueDetails = leagueDetails
          vc.view.backgroundColor = .white
          vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          vc.modalPresentationStyle = .fullScreen

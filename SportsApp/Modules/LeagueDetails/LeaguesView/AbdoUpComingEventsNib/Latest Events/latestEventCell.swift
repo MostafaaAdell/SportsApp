@@ -32,9 +32,9 @@ class latestEventCell: UICollectionViewCell {
         self.clockLabel.text = event.eventTime
         self.dateLabel.text = event.eventDate
         self.firstTeamName.text = event.eventHomeTeam
-        self.firstTeamLogo.kf.setImage(with:URL(string: event.homeTeamLogo) )
+        self.firstTeamLogo.kf.setImage(with:URL(string: event.homeTeamLogo ?? K.defaultValuesForImage) )
         self.secondTeamName.text = event.eventAwayTeam
-        self.secondTeamLogo.kf.setImage(with: URL(string: event.awayTeamLogo))
+        self.secondTeamLogo.kf.setImage(with: URL(string: event.awayTeamLogo ?? K.defaultValuesForImage))
         self.resultLabel.text = event.eventFinalResult
         self.matchStatusLabel.text = K.matchStatue
          

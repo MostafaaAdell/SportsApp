@@ -26,7 +26,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqf-bL-F3i" userLabel="TopView">
                     <rect key="frame" x="0.0" y="59" width="393" height="263.33333333333331"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="villa-park-guide" translatesAutoresizingMaskIntoConstraints="NO" id="GtK-zu-JW1" userLabel="StadiumImageView">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Manchester Uniteds Stadium" translatesAutoresizingMaskIntoConstraints="NO" id="GtK-zu-JW1" userLabel="StadiumImageView">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="263.33333333333331"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -57,7 +57,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old Trafford" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCI-XP-M3k" userLabel="StadiumName">
                                             <rect key="frame" x="0.0" y="33.999999999999972" width="283" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -89,7 +89,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJW-Dk-B8f" userLabel="TshirtView">
                     <rect key="frame" x="25" y="337.33333333333331" width="343" height="249.99999999999994"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manchester-united-f-c-old-trafford-premier-league-third-jersey-manchester-united-e41fc93682a1c092fd93cfa9e024d925" translatesAutoresizingMaskIntoConstraints="NO" id="PZI-UF-XHR" userLabel="TeamTshirtImageView">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Manchester Utd" translatesAutoresizingMaskIntoConstraints="NO" id="PZI-UF-XHR" userLabel="TeamTshirtImageView">
                             <rect key="frame" x="89" y="35" width="165" height="180"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="165" id="Ogb-A3-um1"/>
@@ -136,7 +136,7 @@
                                     <rect key="frame" x="68.333333333333343" y="0.0" width="68.333333333333343" height="35"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Platform=VK, Color=Original" id="uvO-p7-wqn">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Platform=WhatsApp, Color=Original" id="uvO-p7-wqn">
                                     <rect key="frame" x="136.66666666666666" y="0.0" width="68" height="35"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -160,10 +160,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UjS-44-E6f" userLabel="WebsiteLinkView">
-                    <rect key="frame" x="75" y="625.33333333333337" width="243" height="67.666666666666629"/>
+                    <rect key="frame" x="75" y="622.33333333333337" width="243" height="65.666666666666629"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIN-ih-OaS">
-                            <rect key="frame" x="30" y="7.9999999999999964" width="183" height="51.666666666666657"/>
+                            <rect key="frame" x="30" y="7.9999999999999964" width="183" height="49.666666666666657"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="rectangle.portrait.and.arrow.right.fill" catalog="system" title="Official Website">
                                 <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -198,11 +198,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="JJW-Dk-B8f" firstAttribute="height" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="height" priority="999" constant="100" id="94B-cB-uie"/>
-                <constraint firstItem="UjS-44-E6f" firstAttribute="top" secondItem="JJW-Dk-B8f" secondAttribute="bottom" constant="38" id="D4S-pO-EnQ"/>
+                <constraint firstItem="UjS-44-E6f" firstAttribute="top" secondItem="JJW-Dk-B8f" secondAttribute="bottom" constant="35" id="D4S-pO-EnQ"/>
                 <constraint firstAttribute="trailing" secondItem="bqf-bL-F3i" secondAttribute="trailing" id="GZ1-iE-7Uh"/>
                 <constraint firstItem="bqf-bL-F3i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Jk5-8c-XRQ"/>
                 <constraint firstItem="TpT-CE-wnH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="MNo-d5-B7b"/>
-                <constraint firstItem="TpT-CE-wnH" firstAttribute="top" secondItem="UjS-44-E6f" secondAttribute="bottom" constant="30" id="Psi-GA-hmg"/>
+                <constraint firstItem="TpT-CE-wnH" firstAttribute="top" secondItem="UjS-44-E6f" secondAttribute="bottom" constant="35" id="Psi-GA-hmg"/>
                 <constraint firstItem="JJW-Dk-B8f" firstAttribute="top" secondItem="bqf-bL-F3i" secondAttribute="bottom" constant="15" id="SoV-RF-U65"/>
                 <constraint firstItem="JJW-Dk-B8f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="dH6-76-A2c"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UjS-44-E6f" secondAttribute="trailing" constant="75" id="eG2-ee-EIv"/>
@@ -216,14 +216,14 @@
         </view>
     </objects>
     <resources>
+        <image name="Manchester Uniteds Stadium" width="1080" height="567"/>
+        <image name="Manchester Utd" width="1280" height="1280"/>
         <image name="Platform=Facebook, Color=Original" width="48" height="48"/>
         <image name="Platform=Pinterest, Color=Original" width="48" height="48"/>
-        <image name="Platform=VK, Color=Original" width="48" height="48"/>
+        <image name="Platform=WhatsApp, Color=Original" width="48" height="48"/>
         <image name="Vector-2" width="48" height="48"/>
         <image name="man utd logo 2" width="120" height="120"/>
-        <image name="manchester-united-f-c-old-trafford-premier-league-third-jersey-manchester-united-e41fc93682a1c092fd93cfa9e024d925" width="1280" height="1280"/>
         <image name="rectangle.portrait.and.arrow.right.fill" catalog="system" width="128" height="108"/>
-        <image name="villa-park-guide" width="890" height="395"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

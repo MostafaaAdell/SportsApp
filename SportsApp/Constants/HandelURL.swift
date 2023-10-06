@@ -24,6 +24,7 @@ struct HandelURL{
     var URlApi: String {
         get{
             print("\(mainSportsURl)\(sportType)\(met)\(ApiKey)")
+            print("\n\n\n")
             return "\(mainSportsURl)\(sportType)\(met)\(ApiKey)"
         }
     }

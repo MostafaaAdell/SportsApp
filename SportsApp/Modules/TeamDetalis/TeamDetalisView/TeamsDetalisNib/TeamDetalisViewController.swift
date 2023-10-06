@@ -39,9 +39,9 @@ class TeamDetalisViewController: UIViewController {
     @IBAction func officailWebsiteButton(_ sender: Any) {
        
         if let teamName = teamDetalis?.result.first?.teamName{
-            if let url = URL(string: "https://www.\(teamName).com") {
-                UIApplication.shared.open(url)
-            }
+         let  url = URL(string: "https://www.\(teamName).com")
+         UIApplication.shared.open(url ?? URL(string: K.defaultPermiumLeagueLink)!)
+            
         }
     }
     

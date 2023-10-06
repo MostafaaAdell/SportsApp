@@ -7,29 +7,49 @@
 
 import UIKit
 import Kingfisher
+import CoreData
 
 class LeaguesVC: UIViewController {
     @IBOutlet weak var leaguesCollectionView: UICollectionView!
     private var queue = OperationQueue()
+    
+    let leagueCoreData = LeaguesCoreData.sharedDataLeagues
     var viewUpcommingEvent:UpCommingEventProtocol?
     var viewlatestEvent:LatestEventProtocol?
+    var leagueArray:[Leagues]?
     var getUpcommingEvent:UpcommingEventModel?
-    
     var getLatestEvent:LatestEventsModel?
     var teamsDetalis:[TeamModel]?
+    var leagueDetails:Leagues?
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
+           leagueArray = retrivedData
+            self.navigationController?.navigationBar.topItem?.title = leagueDetails?.leagueName
+           
+        }
+        self.leaguesCollectionView.reloadData()
+    }
+    
+    
     // MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
         leaguesCollectionView.collectionViewLayout = createCompositionalLayout()
+        if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
+           leagueArray = retrivedData
+        }
         registerCollectionViewByCell()
         opertionalQueuetoGetAllTeam()
+        configureFavoritueButton()
+        checkInFavorites()
        
+        
+        
     }
-     
-  
+    
+    
 }
 
 
@@ -56,7 +76,7 @@ extension LeaguesVC : UICollectionViewDelegate , UICollectionViewDataSource , UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
+        
         switch indexPath.section{
         case 0 :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.customNibEvent, for: indexPath) as! eventCell
@@ -64,7 +84,7 @@ extension LeaguesVC : UICollectionViewDelegate , UICollectionViewDataSource , UI
                 cell.configure(upCommingEvent: cellOfUpcommingEvent)
             }
             
-       
+            
             return cell
             
         case 1 :
@@ -79,7 +99,7 @@ extension LeaguesVC : UICollectionViewDelegate , UICollectionViewDataSource , UI
             if let team = teamsDetalis?[indexPath.row]{
                 cell.configure(team: team)
             }
-       
+            
             return cell
             
         default :
@@ -91,16 +111,16 @@ extension LeaguesVC : UICollectionViewDelegate , UICollectionViewDataSource , UI
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 2{
-       
+            
             if let teamId =  teamsDetalis?[indexPath.row].teamkey{
                 DependencyProvider.teamId = teamId
                 self.navigationController?.pushViewController(DependencyProvider.teamDetailsViewController, animated: true)
                 
             }
-       
+            
         }
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let view = leaguesCollectionView.dequeueReusableSupplementaryView(ofKind: "header", withReuseIdentifier: K.customNibHeaderView , for: indexPath) as? MyHeaderView else{
@@ -135,8 +155,65 @@ extension LeaguesVC{
     func configureCollectionView(){
         leaguesCollectionView.delegate = self
         leaguesCollectionView.dataSource = self
-       
+        
     }
+    
+    func configureFavoritueButton(){
+        if let favoriteImage = UIImage(systemName:K.favoriteIconNotSave){
+            
+            let favorite = UIBarButtonItem(image: favoriteImage, style: .plain, target: self, action: #selector(favoriteTapped))
+            navigationItem.rightBarButtonItems = [favorite]
+        }
+        
+        
+    }
+    
+    //Button Action to save league in core Data
+    @objc func favoriteTapped(){
+        if let leagueDetails = leagueDetails{
+            
+            if navigationItem.rightBarButtonItems?.first?.image == UIImage(systemName:K.favoriteIconSave){
+                if let getIndexLeague = leagueArray?.firstIndex(of:leagueDetails){
+                    leagueCoreData.deleteLeague(index: getIndexLeague)
+                    if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
+                       leagueArray = retrivedData
+                    }
+                    checkNotFavorites()
+                }
+                
+            }else{
+                
+                leagueCoreData.setLeaguesDetalis(leagueKey: leagueDetails.leagueKey, leagueName: leagueDetails.leagueName, leagueLogo: leagueDetails.leagueLogo ?? K.defaultLeagueLogo, countryName: leagueDetails.countryName, countryLogo: leagueDetails.countryLogo ?? "No Country Logo", countryKey: leagueDetails.countryKey)
+                
+                leagueArray?.removeAll()
+                if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
+                   leagueArray = retrivedData
+                }
+                navigationItem.rightBarButtonItems?.first?.image = UIImage(systemName:K.favoriteIconSave)
+                navigationItem.rightBarButtonItems?.first?.tintColor = .red
+            }
+        }
+    }
+    
+    
+    //set FAvorites
+    func checkInFavorites(){
+        if let _ = leagueArray?.first(where: {$0.leagueKey == leagueDetails?.leagueKey}){
+            navigationItem.rightBarButtonItems?.first?.image = UIImage(systemName:K.favoriteIconSave)
+            navigationItem.rightBarButtonItems?.first?.tintColor = .red
+        }
+    }
+    
+    //Remove Favorites
+    func checkNotFavorites(){
+        navigationItem.rightBarButtonItems?.first?.image = UIImage(systemName:K.favoriteIconNotSave)
+        navigationItem.rightBarButtonItems?.first?.tintColor = .black
+        
+    }
+    
+    
+    
+
     
     //MARK: - Getting Team Logo And Names
     func GetTeamLogoAndName(){
@@ -159,8 +236,8 @@ extension LeaguesVC{
                     }
                 }
                 
-
-
+                
+                
             }
         }
         
@@ -181,8 +258,8 @@ extension LeaguesVC{
                     }
                 }
                 
-
-
+                
+                
             }
         }
     }
@@ -228,7 +305,7 @@ extension LeaguesVC{
     
     
     // MARK: - createFirstSection
-
+    
     func createFirstSection()-> NSCollectionLayoutSection{
         
         let inset:CGFloat = 10
@@ -245,10 +322,10 @@ extension LeaguesVC{
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
         
-               //supplemantry
-               let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-               let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize , elementKind: "header" ,alignment: .top)
-               section.boundarySupplementaryItems = [header]
+        //supplemantry
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize , elementKind: "header" ,alignment: .top)
+        section.boundarySupplementaryItems = [header]
         
         return section
     }
@@ -318,9 +395,9 @@ extension LeaguesVC{
                 self?.GetTeamLogoAndName()
                 OperationQueue.main.addOperation {
                     self?.leaguesCollectionView.reloadData()
-
+                    
                 }
-          
+                
             }
         }
         
@@ -332,31 +409,48 @@ extension LeaguesVC{
                 
                 OperationQueue.main.addOperation {
                     self?.leaguesCollectionView.reloadData()
-
+                    
                 }
                 
             }
         }
         
-      
         
-     
+        
+        
         getDataOfUpcommingEvent.addDependency(getDataLatestEvent)
         queue.addOperations([getDataOfUpcommingEvent,getDataLatestEvent], waitUntilFinished: true)
- 
         
-
+        
+        
         
     }
     
 }
-    
-
-    
-    
 
 
-    
+//MARK: - Pushing Navigation bar Up and Down When Scrolling
+
+extension LeaguesVC:UIScrollViewDelegate{
+     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        
+        if offsetY > 0 {
+            // Scrolling downwards
+            navigationController?.setNavigationBarHidden(true, animated: true)
+        } else {
+            // Scrolling upwards or at the top
+            navigationController?.setNavigationBarHidden(false, animated: true)
+        }
+    }
+}
+
+
+
+
+
+
+
 
 
 

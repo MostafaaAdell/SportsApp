@@ -14,12 +14,15 @@ struct AllLeagueModel: Codable {
 }
 
 // MARK: - Result
-struct Leagues: Codable {
+struct Leagues: Codable ,Equatable{
     let leagueKey: Int
     let leagueName: String
     let countryKey: Int
     let countryName: String
     let leagueLogo, countryLogo: String?
+    static func == (lhs:Leagues,rhs:Leagues)->Bool{
+        return lhs.leagueKey == rhs.leagueKey
+    }
 
     enum CodingKeys: String, CodingKey {
         case leagueKey = "league_key"

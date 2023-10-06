@@ -20,7 +20,7 @@ struct K {
     static let customNibHeaderView = "MyHeaderView"
     
     //Custom Constraint of Cell
-    static let customNibNameLeaguesHeight:CGFloat = 90
+    static let customNibNameLeaguesHeight:CGFloat = 80
     static let customCellOfCollectionViewCornerRadius:CGFloat = 15
     
     //Custom Team Controller & Storyboard
@@ -46,12 +46,12 @@ struct K {
     
     
     //Constant Name for Json Api League
-    static let leagueName = "leaguesName"
-    static let leagueKey = "leaguesKey"
-    static let leagueLogo = "leagueLogo"
-    static let countryName = "countryName"
-    static let countryLogo = "countryLogo"
-    static let countryKey = "countryKey"
+//    static let leagueName = "leaguesName"
+//    static let leagueKey = "leaguesKey"
+//    static let leagueLogo = "leagueLogo"
+//    static let countryName = "countryName"
+//    static let countryLogo = "countryLogo"
+//    static let countryKey = "countryKey"
     
 
     
@@ -76,6 +76,17 @@ struct K {
     
     //Status of match
     static let matchStatue = "Match Finish"
+    
+    //Default Link
+    static let defaultPermiumLeagueLink = "https://www.premierleague.com"
+    static let defaultLeagueLogo = "Premier League"
+    
+    //image system Name
+    static let favoriteIconNotSave = "heart"
+    static let favoriteIconSave = "heart.fill"
+    
+
+    
     
     
     

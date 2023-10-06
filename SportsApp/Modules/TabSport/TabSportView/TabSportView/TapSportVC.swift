@@ -14,6 +14,7 @@ class TapSportVC: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        print(K.sportGame)
         self.navigationController?.navigationBar.topItem?.title = K.sportGame
         self.navigationController?.navigationBar.backItem?.title  = ""
 
@@ -24,7 +25,6 @@ class TapSportVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        
         
     }
     

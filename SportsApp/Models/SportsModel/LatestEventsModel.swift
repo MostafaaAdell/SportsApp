@@ -20,26 +20,26 @@ struct LatestEventsModel: Codable {
 
 // MARK: - Result
 struct latestEvent: Codable {
-    let eventKey: Int
-    let eventDate, eventTime, eventHomeTeam: String
-    let homeTeamKey: Int
-    let eventAwayTeam: String
-    let awayTeamKey: Int
-    let eventHalftimeResult, eventFinalResult, eventFtResult: String
+    let eventKey: Int?
+    let eventDate, eventTime, eventHomeTeam: String?
+    let homeTeamKey: Int?
+    let eventAwayTeam: String?
+    let awayTeamKey: Int?
+    let eventHalftimeResult, eventFinalResult, eventFtResult: String?
     //let eventPenaltyResult: EventPenaltyResult
    // let eventStatus: EventStatus
    // let countryName: CountryName
-    let leagueName: String
-    let leagueKey: Int
+    let leagueName: String?
+    let leagueKey: Int?
     //let leagueRound: LeagueRound
     //let leagueSeason: LeagueSeason
-    let eventLive, eventStadium, eventReferee: String
-    let homeTeamLogo, awayTeamLogo: String
-    let eventCountryKey: Int
-    let leagueLogo, countryLogo: String
-    let eventHomeFormation, eventAwayFormation: String
-    let fkStageKey: Int
-    let stageName: String
+    let eventLive, eventStadium, eventReferee: String?
+    let homeTeamLogo, awayTeamLogo: String?
+    let eventCountryKey: Int?
+    let leagueLogo, countryLogo: String?
+    let eventHomeFormation, eventAwayFormation: String?
+    let fkStageKey: Int?
+    let stageName: String?
    // let leagueGroup: JSONNull?
    // let goalscorers: [[String: String?]]
   //  let substitutes: [Substitute]
