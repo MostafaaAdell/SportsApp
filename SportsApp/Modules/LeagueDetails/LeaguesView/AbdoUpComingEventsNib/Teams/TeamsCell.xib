@@ -25,7 +25,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man utd logo 2" translatesAutoresizingMaskIntoConstraints="NO" id="3op-ew-lrp">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BasketBall" translatesAutoresizingMaskIntoConstraints="NO" id="3op-ew-lrp">
                                 <rect key="frame" x="26" y="-28" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="9YR-Pi-RHg"/>
@@ -61,6 +61,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="man utd logo 2" width="120" height="120"/>
+        <image name="BasketBall" width="1280" height="1280"/>
     </resources>
 </document>

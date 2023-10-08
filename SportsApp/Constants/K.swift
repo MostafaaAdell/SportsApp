@@ -29,6 +29,7 @@ struct K {
     static let leaguesAllEvent = "LeaguesVC"
     static let storyBoardLeagueIdentfier = "LeauguesView"
     static let storyBoardLeauguesView = "LeauguesView"
+    static let TapSportVC = "TapSportVC"
     
     // Sports title name Navigation bar
     static let sportGame = "Sports"
@@ -62,7 +63,7 @@ struct K {
     static let teamIdIndicator = 4
     
     //Load Data To Tab Controller Of Sports
-    static  let sports = ["Football", "Basketball", "MotorSport", "Fighting", "Baseball", "American Football","Ice Hockey" , "Gulf"]
+    static  let sports = ["Football", "Basketball", "MotorSport", "Fighting", "Tennis", "American Football","Ice Hockey" , "Cricket"]
     static  let sportsImg = ["Football", "Basketball", "MotorSport", "Fighting", "Baseball", "American Football","Ice Hockey" , "Gulf"]
     
     
@@ -71,7 +72,7 @@ struct K {
     
     
     //Default Values
-    static let defaultValuesForImage =  "1"
+    static let defaultValuesForImage =  "https://www.pngall.com/wp-content/uploads/1/Sports-Download-PNG.png"
     
     
     //Status of match

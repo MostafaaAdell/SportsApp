@@ -19,7 +19,7 @@ class TeamsCell: UICollectionViewCell {
         super.awakeFromNib()
         myView.layer.cornerRadius = 8
         self.layer.cornerRadius = 25
-
+        
         
         // Initialization code
     }
@@ -27,7 +27,10 @@ class TeamsCell: UICollectionViewCell {
     // MARK: - configure Nib
     func configure(team:TeamModel) {
         self.teamNameLabel.text = team.teamName
-        self.teamLogo.kf.setImage(with: URL(string: team.teamLogo ?? K.defaultValuesForImage))
+        if let teamLogo = team.teamLogo{
+            self.teamLogo.kf.setImage(with: URL(string: teamLogo))
+        }
         
-           }
+        
     }
+}

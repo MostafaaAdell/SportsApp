@@ -35,8 +35,11 @@ class eventCell: UICollectionViewCell {
         self.clockLabel.text = upCommingEvent.eventTime
         self.dateLabel.text = upCommingEvent.eventDate
         self.firstTeamName.text = upCommingEvent.eventHomeTeam
-        self.firstTeamLogo.kf.setImage(with: URL(string: upCommingEvent.homeTeamLogo ?? K.defaultValuesForImage))
-        self.secondTeamLogo.kf.setImage(with: URL(string: upCommingEvent.awayTeamLogo ?? K.defaultValuesForImage))
+        if let homeImage = upCommingEvent.homeTeamLogo,let awayImage =  upCommingEvent.awayTeamLogo{
+            self.firstTeamLogo.kf.setImage(with: URL(string: homeImage))
+            self.secondTeamLogo.kf.setImage(with:URL(string: awayImage))
+        }
+       
         self.secondTeamName.text = upCommingEvent.eventAwayTeam
         
         

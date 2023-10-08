@@ -14,12 +14,11 @@ class TapSportVC: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        print(K.sportGame)
         self.navigationController?.navigationBar.topItem?.title = K.sportGame
-        self.navigationController?.navigationBar.backItem?.title  = ""
 
 
     }
+    
 
     // MARK: - LifeCycleMethods
     override func viewDidLoad() {
@@ -44,7 +43,7 @@ class TapSportVC: UIViewController {
 extension TapSportVC: UICollectionViewDataSource , UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        K.sports.count
+        return K.sports.count
     }
         
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

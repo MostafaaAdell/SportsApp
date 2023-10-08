@@ -8,11 +8,15 @@
 import UIKit
 import Kingfisher
 import CoreData
+import Lottie
+
 
 class LeaguesVC: UIViewController {
     @IBOutlet weak var leaguesCollectionView: UICollectionView!
-    private var queue = OperationQueue()
     
+    
+
+    private var queue = OperationQueue()
     let leagueCoreData = LeaguesCoreData.sharedDataLeagues
     var viewUpcommingEvent:UpCommingEventProtocol?
     var viewlatestEvent:LatestEventProtocol?
@@ -21,12 +25,13 @@ class LeaguesVC: UIViewController {
     var getLatestEvent:LatestEventsModel?
     var teamsDetalis:[TeamModel]?
     var leagueDetails:Leagues?
+    var activityIndicatorView = ActivityIndicatorView()
+    let myView : LottieAnimationView = .init()
     
     override func viewDidAppear(_ animated: Bool) {
         if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
            leagueArray = retrivedData
             self.navigationController?.navigationBar.topItem?.title = leagueDetails?.leagueName
-           
         }
         self.leaguesCollectionView.reloadData()
     }
@@ -35,6 +40,8 @@ class LeaguesVC: UIViewController {
     // MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
         configureCollectionView()
         leaguesCollectionView.collectionViewLayout = createCompositionalLayout()
         if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
@@ -44,6 +51,8 @@ class LeaguesVC: UIViewController {
         opertionalQueuetoGetAllTeam()
         configureFavoritueButton()
         checkInFavorites()
+        activityIndicatorView.setConfigrationForIndicator(view: view)
+        
        
         
         
@@ -57,10 +66,12 @@ class LeaguesVC: UIViewController {
 
 extension LeaguesVC : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     
+    //Number od section in Collection View
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
     
+    //Number of item in each Collection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch section{
@@ -75,6 +86,7 @@ extension LeaguesVC : UICollectionViewDelegate , UICollectionViewDataSource , UI
         }
     }
     
+    //Custom Cell of each section
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         switch indexPath.section{
@@ -83,8 +95,6 @@ extension LeaguesVC : UICollectionViewDelegate , UICollectionViewDataSource , UI
             if let cellOfUpcommingEvent = getUpcommingEvent?.result[indexPath.row]{
                 cell.configure(upCommingEvent: cellOfUpcommingEvent)
             }
-            
-            
             return cell
             
         case 1 :
@@ -109,6 +119,7 @@ extension LeaguesVC : UICollectionViewDelegate , UICollectionViewDataSource , UI
         
     }
     
+    //Navigate to Another View Controller To Team Details
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 2{
             
@@ -122,6 +133,7 @@ extension LeaguesVC : UICollectionViewDelegate , UICollectionViewDataSource , UI
     }
     
     
+    //Setting Header of each section
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let view = leaguesCollectionView.dequeueReusableSupplementaryView(ofKind: "header", withReuseIdentifier: K.customNibHeaderView , for: indexPath) as? MyHeaderView else{
             
@@ -158,9 +170,9 @@ extension LeaguesVC{
         
     }
     
+    //Setting Adding Favorite Button to NAvigation bar
     func configureFavoritueButton(){
         if let favoriteImage = UIImage(systemName:K.favoriteIconNotSave){
-            
             let favorite = UIBarButtonItem(image: favoriteImage, style: .plain, target: self, action: #selector(favoriteTapped))
             navigationItem.rightBarButtonItems = [favorite]
         }
@@ -168,8 +180,10 @@ extension LeaguesVC{
         
     }
     
-    //Button Action to save league in core Data
-    @objc func favoriteTapped(){
+    
+    //Animate when set or remove Favorite
+    @objc func setFavoriteAnimation(){
+        myView.removeFromSuperview()
         if let leagueDetails = leagueDetails{
             
             if navigationItem.rightBarButtonItems?.first?.image == UIImage(systemName:K.favoriteIconSave){
@@ -193,10 +207,31 @@ extension LeaguesVC{
                 navigationItem.rightBarButtonItems?.first?.tintColor = .red
             }
         }
+        
+        
+    }
+    
+    //Start animation of Favorite tap
+    func luanchFavoriteAnimation(){
+        myView.animation = .named("Animation5")
+        myView.loopMode = .loop
+        myView.frame = CGRect(x: 0, y: 0, width: 600, height: 250)
+        myView.center = CGPointMake(myView.frame.maxX/1.25, myView.frame.height/0.16)
+        myView.center = view.center
+        view.addSubview(myView)
+        myView.contentMode = .scaleAspectFit
+        myView.backgroundColor = .clear
+        myView.play()
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setFavoriteAnimation), userInfo: nil, repeats: false)
+    }
+    //Button Action to save league in core Data
+    @objc func favoriteTapped(){
+        luanchFavoriteAnimation()
+        
     }
     
     
-    //set FAvorites
+    //set Favoritesv if found in CoreData
     func checkInFavorites(){
         if let _ = leagueArray?.first(where: {$0.leagueKey == leagueDetails?.leagueKey}){
             navigationItem.rightBarButtonItems?.first?.image = UIImage(systemName:K.favoriteIconSave)
@@ -382,12 +417,19 @@ extension LeaguesVC{
     
 }
 
-//Applying Opertional Quet
+//MARK: -Applying Opertional Quet
 extension LeaguesVC{
+    
+    
+  
+    
     func opertionalQueuetoGetAllTeam(){
         
         
         let getDataOfUpcommingEvent = BlockOperation{
+            DispatchQueue.main.async {
+                self.activityIndicatorView.startLoading(view: self.view)
+            }
             self.viewUpcommingEvent?.getDataFromApiForUpcomming()
             self.viewUpcommingEvent?.handerDataOfUpcommingEvent = { [weak self] in
                 
@@ -395,13 +437,17 @@ extension LeaguesVC{
                 self?.GetTeamLogoAndName()
                 OperationQueue.main.addOperation {
                     self?.leaguesCollectionView.reloadData()
-                    
+                    self?.activityIndicatorView.stopLoading(view: (self?.view)!)
+
                 }
                 
             }
         }
         
         let getDataLatestEvent = BlockOperation{
+            DispatchQueue.main.async {
+                self.activityIndicatorView.startLoading(view: self.view)
+            }
             self.viewlatestEvent?.getDataFromApiForLatest()
             self.viewlatestEvent?.handerDataOfLatestEvent = { [weak self] in
                 
@@ -409,6 +455,8 @@ extension LeaguesVC{
                 
                 OperationQueue.main.addOperation {
                     self?.leaguesCollectionView.reloadData()
+                    self?.activityIndicatorView.stopLoading(view: (self?.view)!)
+
                     
                 }
                 
@@ -430,7 +478,6 @@ extension LeaguesVC{
 
 
 //MARK: - Pushing Navigation bar Up and Down When Scrolling
-
 extension LeaguesVC:UIScrollViewDelegate{
      func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y

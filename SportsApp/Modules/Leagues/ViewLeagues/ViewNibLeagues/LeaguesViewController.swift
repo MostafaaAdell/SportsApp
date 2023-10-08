@@ -17,9 +17,14 @@ class LeaguesViewController: UIViewController ,CustomNibCellProtocol{
     var viewAllLeague:AllLeagueProtocol?
     var getallLeagues:AllLeagueModel?
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.topItem?.title = DependencyProvider.sportType.capitalized
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//       self.navigationController?.navigationBar.topItem?.title = DependencyProvider.sportType.capitalized
+//    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.navigationController?.navigationBar.topItem?.title = K.sportGame
+//       
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLeagueTableView()
@@ -27,6 +32,7 @@ class LeaguesViewController: UIViewController ,CustomNibCellProtocol{
         
         // Do any additional setup after loading the view.
     }
+    
 
 
     
