@@ -32,4 +32,7 @@ struct Leagues: Codable ,Equatable{
         case leagueLogo = "league_logo"
         case countryLogo = "country_logo"
     }
+    
+    
+ 
 }

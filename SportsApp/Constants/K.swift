@@ -46,15 +46,6 @@ struct K {
     static let tennis = "tennis"
     
     
-    //Constant Name for Json Api League
-//    static let leagueName = "leaguesName"
-//    static let leagueKey = "leaguesKey"
-//    static let leagueLogo = "leagueLogo"
-//    static let countryName = "countryName"
-//    static let countryLogo = "countryLogo"
-//    static let countryKey = "countryKey"
-    
-
     
     //Indicator of Type of Sport
     static let allLeagueIndicator = 1

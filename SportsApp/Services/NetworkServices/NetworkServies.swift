@@ -40,44 +40,6 @@ class NetworkServices: NetworkServiceDelegate {
 }
   
 
-//VC
-//var leagues: GetUpcommingEvent?
-//var networkService:NetworkServiceDelegate?
-//networkService = NetworkServices(setUrl: APIConstant(sportType: K.football,leagueIdWithUpcomiingEvent: 205))
-//networkService?.fetchDataFromAPIForFootball { (data: AFDataResponse<Data?>? , error: Error?)in
-//    if let validData = data?.data{
-//        do{
-//            let leagues = try JSONDecoder().decode(GetUpcommingEvent.self, from: validData)
-//            print(leagues.result)
-//            
-//        }catch let error{print(error.localizedDescription.description)}
-//    }
-//    else{print("there is error in Casting Data")}
-//    
-//    
-//}
 
-
-//////////////
-//let url = URL(string: setUrl.prepareAPIUrl())
-//guard let validUrl = url else{Handler(nil,nil);return }
-//
-//let request = URLRequest(url: validUrl)
-//let session = URLSession(configuration: .default)
-//let task = session.dataTask(with: request) { data, response, error in
-//    if let validData = data as? T{Handler(validData,nil)}
-//    else{print("There is error in casting data")}
-//}
-//
-//task.resume()
-
-
-//do{
-//    let leagues = try JSONDecoder().decode(T.self, from: validData)
-//    Handler(leagues  ,nil)
-//}catch let error{
-//    print(error.localizedDescription.description)
-//    Handler(nil,error)
-//}
 
 

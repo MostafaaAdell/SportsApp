@@ -14,14 +14,16 @@ class FavouritesViewController: UIViewController {
     let leagueCoreData = LeaguesCoreData.sharedDataLeagues
     var leagueArray:[Leagues]?
    
-  
     
+   
     
     
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.topItem?.title  = K.favourites
         self.navigationController?.navigationBar.backItem?.title  = ""
+        navigationController?.topViewController?.navigationItem.rightBarButtonItem?.isHidden = true
+
         if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
             leagueArray = retrivedData
             
@@ -34,7 +36,6 @@ class FavouritesViewController: UIViewController {
         if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
             leagueArray = retrivedData
         }
-        
         
     }
     

@@ -28,6 +28,9 @@ class LeaguesVC: UIViewController {
     var activityIndicatorView = ActivityIndicatorView()
     let myView : LottieAnimationView = .init()
     
+    
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
            leagueArray = retrivedData
@@ -174,7 +177,7 @@ extension LeaguesVC{
     func configureFavoritueButton(){
         if let favoriteImage = UIImage(systemName:K.favoriteIconNotSave){
             let favorite = UIBarButtonItem(image: favoriteImage, style: .plain, target: self, action: #selector(favoriteTapped))
-            navigationItem.rightBarButtonItems = [favorite]
+            navigationItem.rightBarButtonItem = favorite
         }
         
         

@@ -60,7 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vtx-ta-1J7">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="sFa-OL-BkM">
                                     <size key="itemSize" width="170" height="170"/>
@@ -86,7 +86,7 @@
                         <constraints>
                             <constraint firstItem="vtx-ta-1J7" firstAttribute="bottom" secondItem="2Of-Q7-rEV" secondAttribute="bottom" id="J1G-Au-93B"/>
                             <constraint firstItem="vtx-ta-1J7" firstAttribute="leading" secondItem="2Of-Q7-rEV" secondAttribute="leading" id="K4q-cG-N7u"/>
-                            <constraint firstItem="vtx-ta-1J7" firstAttribute="top" secondItem="ZEh-Z8-gxC" secondAttribute="top" id="WPK-nI-Scx"/>
+                            <constraint firstItem="vtx-ta-1J7" firstAttribute="top" secondItem="2Of-Q7-rEV" secondAttribute="top" id="WPK-nI-Scx"/>
                             <constraint firstItem="2Of-Q7-rEV" firstAttribute="trailing" secondItem="vtx-ta-1J7" secondAttribute="trailing" id="bFj-8I-jK4"/>
                         </constraints>
                     </view>
@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gF-Za-FvA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="-476"/>
+            <point key="canvasLocation" x="1591.6030534351144" y="-476.05633802816902"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oYp-fd-Sso">

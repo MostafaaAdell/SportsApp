@@ -24,9 +24,10 @@
 		4548CDF62AC44AB9000940B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4548CDF42AC44AB9000940B9 /* LaunchScreen.storyboard */; };
 		4548CE072AC44CA7000940B9 /* NetworkServies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548CE062AC44CA7000940B9 /* NetworkServies.swift */; };
 		456E2A1E2AD19E2A00BD94F1 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E2A1D2AD19E2900BD94F1 /* SplashVC.swift */; };
+		457EB4612AD31017003BFFA6 /* Animation8.json in Resources */ = {isa = PBXBuildFile; fileRef = 457EB4602AD31017003BFFA6 /* Animation8.json */; };
 		4586D9E32AC87B2B00E9154E /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4586D9E22AC87B2B00E9154E /* DependencyInjection.swift */; };
 		4586D9E62AC89C0B00E9154E /* LeaguesCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4586D9E52AC89C0B00E9154E /* LeaguesCoreData.swift */; };
-		458801E82AD3031200DFD466 /* Animationn7.json in Resources */ = {isa = PBXBuildFile; fileRef = 458801E72AD3031200DFD466 /* Animationn7.json */; };
+		458801E82AD3031200DFD466 /* Animation7.json in Resources */ = {isa = PBXBuildFile; fileRef = 458801E72AD3031200DFD466 /* Animation7.json */; };
 		458D46922ACB600A0097AEFE /* LatestEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D46912ACB600A0097AEFE /* LatestEventsModel.swift */; };
 		458E155B2AD212660000DB89 /* Animation2.json in Resources */ = {isa = PBXBuildFile; fileRef = 458E155A2AD212660000DB89 /* Animation2.json */; };
 		458E155E2AD216A40000DB89 /* Animation3.json in Resources */ = {isa = PBXBuildFile; fileRef = 458E155C2AD216A40000DB89 /* Animation3.json */; };
@@ -80,9 +81,10 @@
 		4548CDF72AC44AB9000940B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4548CE062AC44CA7000940B9 /* NetworkServies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServies.swift; sourceTree = "<group>"; };
 		456E2A1D2AD19E2900BD94F1 /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		457EB4602AD31017003BFFA6 /* Animation8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation8.json; sourceTree = "<group>"; };
 		4586D9E22AC87B2B00E9154E /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		4586D9E52AC89C0B00E9154E /* LeaguesCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesCoreData.swift; sourceTree = "<group>"; };
-		458801E72AD3031200DFD466 /* Animationn7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animationn7.json; sourceTree = "<group>"; };
+		458801E72AD3031200DFD466 /* Animation7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation7.json; sourceTree = "<group>"; };
 		458D46912ACB600A0097AEFE /* LatestEventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestEventsModel.swift; sourceTree = "<group>"; };
 		458E155A2AD212660000DB89 /* Animation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Animation2.json; path = ../../../../../Downloads/Animation2.json; sourceTree = "<group>"; };
 		458E155C2AD216A40000DB89 /* Animation3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation3.json; sourceTree = "<group>"; };
@@ -372,7 +374,8 @@
 				458E155D2AD216A40000DB89 /* Animation4.json */,
 				459812D92AD219BB000CFF69 /* Animation5.json */,
 				458FA3072AD25FF600E16ACA /* Animation6.json */,
-				458801E72AD3031200DFD466 /* Animationn7.json */,
+				458801E72AD3031200DFD466 /* Animation7.json */,
+				457EB4602AD31017003BFFA6 /* Animation8.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -577,11 +580,12 @@
 				459B3B032ACA338A00C04DC6 /* MyHeaderView.xib in Resources */,
 				458E155F2AD216A40000DB89 /* Animation4.json in Resources */,
 				459B3B062ACA338A00C04DC6 /* TeamsCell.xib in Resources */,
-				458801E82AD3031200DFD466 /* Animationn7.json in Resources */,
+				458801E82AD3031200DFD466 /* Animation7.json in Resources */,
 				4548CDF32AC44AB9000940B9 /* Assets.xcassets in Resources */,
 				459B3B052ACA338A00C04DC6 /* eventCell.xib in Resources */,
 				4529BD392AC4988300F4A84E /* LeaguesViewController.xib in Resources */,
 				459812DA2AD219BB000CFF69 /* Animation5.json in Resources */,
+				457EB4612AD31017003BFFA6 /* Animation8.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
