@@ -14,6 +14,8 @@ protocol TeamDetailsProtocol{
 }
 
 class TeamDetailsEvent:TeamDetailsProtocol{
+    
+    var services: NetworkServiceDelegate?
     var handerDataOfTeamDetails: (() -> Void)?
 
     private(set) var teamIdDetalis: TeamDetailsModel? {
@@ -23,12 +25,13 @@ class TeamDetailsEvent:TeamDetailsProtocol{
             }
         }
     }
-    var services: NetworkServiceDelegate?
+    
 
     init(services: NetworkServiceDelegate?){
         self.services = services
     }
     
+    // MARK: - Congigure Call Getting Data From Api for REam Details
     func getDataFromApiForTeamDetails() {
         services?.fetchDataFromAPIForFootball(Handler: { (dataValue:TeamDetailsModel?, error: Error?) in
 
@@ -42,10 +45,14 @@ class TeamDetailsEvent:TeamDetailsProtocol{
         })
     }
     
+    // MARK: - Congigure Getting Team Details Model
+
     func getTeamIdArray() -> TeamDetailsModel? {
         return teamIdDetalis
     }
     
+    // MARK: - Congigure Getting Team Details Model Count
+
     func getNumberOfTeamDetails() -> Int? {
         return teamIdDetalis?.result.count
     }

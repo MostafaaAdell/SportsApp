@@ -26,6 +26,7 @@ class ActivityIndicatorView{
         view.addSubview(overlayView)
     }
     
+    //StartANimation for Indicator
     func startLoading(view:UIView) {
            // Disable user interaction on the main view
            view.isUserInteractionEnabled = false
@@ -34,6 +35,8 @@ class ActivityIndicatorView{
            activityIndicator.startAnimating()
        }
 
+    
+    //Stop Animating for Indicator
     func stopLoading(view:UIView) {
            // Stop animating the indicator
            activityIndicator.stopAnimating()

@@ -20,7 +20,7 @@ class NetworkServices: NetworkServiceDelegate {
         self.setUrl = setUrl
     }
   
-    // Fetching Data From Api
+    //MARK: - Fetching Data From Api
     func fetchDataFromAPIForFootball<T:Codable>(Handler: @escaping (T?,Error?) -> Void) {
         AF.request(setUrl.prepareAPIUrl()).response { data in
             if let validData = data.data {

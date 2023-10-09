@@ -12,13 +12,13 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - UpcommingEventModel
 struct UpcommingEventModel: Codable {
     let success: Int
     let result: [UpCommingEvent]
 }
 
-// MARK: - Result
+// MARK: - UpCommingEvent
 struct UpCommingEvent: Codable {
     let eventKey: Int?
     let eventDate, eventTime, eventHomeTeam: String?
@@ -36,11 +36,7 @@ struct UpCommingEvent: Codable {
     let eventHomeFormation, eventAwayFormation: String?
     let fkStageKey: Int?
     let stageName: String?
-   // let leagueGroup: JSONNull?
- //   let goalscorers, substitutes, cards: [JSONAny]
-  //  let vars: Vars
-   // let lineups: Lineups
-  //  let statistics: [JSONAny]
+ 
 
     enum CodingKeys: String, CodingKey {
         case eventKey = "event_key"
@@ -72,23 +68,10 @@ struct UpCommingEvent: Codable {
         case eventAwayFormation = "event_away_formation"
         case fkStageKey = "fk_stage_key"
         case stageName = "stage_name"
-      //  case leagueGroup = "league_group"
-      //  case goalscorers, substitutes, cards, vars, lineups, statistics
+    
     }
 }
 
-
-
-// MARK: - Team
-//struct Team: Codable {
-//    let startingLineups, substitutes, coaches, missingPlayers: [JSONAny]
-//
-//    enum CodingKeys: String, CodingKey {
-//        case startingLineups = "starting_lineups"
-//        case substitutes, coaches
-//        case missingPlayers = "missing_players"
-//    }
-//}
 
 
 

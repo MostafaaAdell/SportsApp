@@ -18,7 +18,7 @@ class AllLeagues:AllLeagueProtocol{
  
     
     
-    
+    var services: NetworkServiceDelegate?
     var handerDataOfLeagues: (() -> Void)? 
     
     var getAllLeagues: AllLeagueModel? {
@@ -28,16 +28,18 @@ class AllLeagues:AllLeagueProtocol{
             }
         }
     }
-    var services: NetworkServiceDelegate?
+    
 
     init(services: NetworkServiceDelegate?){
         self.services = services
     }
     
+    //MARK: -Get All Model Return From Api
     func getLeaguesArray() -> AllLeagueModel? {
         return getAllLeagues
     }
     
+    //MARK: -CAll Request of Api
     func getDataFromApiForLeagues() {
         services?.fetchDataFromAPIForFootball(Handler: { (dataValue:AllLeagueModel?, error: Error?) in
 
@@ -52,6 +54,7 @@ class AllLeagues:AllLeagueProtocol{
     }
   
     
+    //MARK: -Getting Number of Leagues
     func getNumberOfLeagues() -> Int? {
         return getAllLeagues?.result.count
     }

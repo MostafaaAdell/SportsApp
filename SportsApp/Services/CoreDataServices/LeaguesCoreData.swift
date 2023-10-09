@@ -16,7 +16,7 @@ class LeaguesCoreData{
     private let tableName :String
     lazy var leagueList:(leagueArrayObject:[NSManagedObject]? , leagueArrayItem:[Leagues]?)?  = retrivedLeagueList()
     
-    //Singletone to save data and create one instance only
+    //MARK: - Singletone to save data and create one instance only
     static let sharedDataLeagues = LeaguesCoreData()
     
     private  init(){
@@ -27,7 +27,7 @@ class LeaguesCoreData{
     }
     
     
-    //Function to set value of league in Core Data
+    //MARK: - Function to set value of league in Core Data
     func setLeaguesDetalis( leagueKey:Int, leagueName:String, leagueLogo:String, countryName:String, countryLogo:String,countryKey:Int) ->Void {
         
         guard let entity = NSEntityDescription.entity(forEntityName: tableName, in: context) else{
@@ -52,7 +52,7 @@ class LeaguesCoreData{
     }
     
     
-    //Function retrivied League List
+    //MARK: - Function retrivied League List
     func retrivedLeagueList() ->([NSManagedObject] ,[Leagues])?{
         
         var leagueArray = [Leagues]()
@@ -83,9 +83,9 @@ class LeaguesCoreData{
     
     
     
-    //Delete All Data leages in Core Data
-   private func deleteLeagueCoreData(){
-           if let (leagues,_) = retrivedLeagueList() {
+    //MARK: - Delete All Data leages in Core Data
+    private func deleteLeagueCoreData(){
+        if let (leagues,_) = retrivedLeagueList() {
             for league in leagues{
                 context.delete(league)
                 leagueList?.leagueArrayObject?.remove(at: 0)
@@ -103,7 +103,7 @@ class LeaguesCoreData{
     
     
     
-    //Load All Leagues Data
+    //MARK: - Load All Leagues Data
     func loadAllLeagueData(loadLeagueList:[Leagues]){
         deleteLeagueCoreData()
         for league in loadLeagueList{
@@ -115,7 +115,7 @@ class LeaguesCoreData{
     }
     
     
-    //Delete Single League
+    //MARK: - Delete Single League
     func deleteLeague (index: Int){
         
         context.delete((leagueList?.leagueArrayObject?[index])!)

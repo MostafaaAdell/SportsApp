@@ -36,6 +36,7 @@ struct HandelURL{
         self.sportType = sportType
         self.met = Met.allLeagues.order
     }
+    //init withupcomming Event for league Id
     init(sportType:String , leagueIdWithUpcomiingEvent:Int){
         
         self.sportType = sportType
@@ -95,7 +96,7 @@ extension HandelURL: ApiPreparationDelegate {
 }
 
 
-// MARK: ADding extenision to The Date To Get Current ANd Next And Last Year
+// MARK: Adding extenision to The Date To Get Current ANd Next And Last Year
 extension Date {
     static func getCurrentDate() -> String {
         let dateFormatter = DateFormatter()

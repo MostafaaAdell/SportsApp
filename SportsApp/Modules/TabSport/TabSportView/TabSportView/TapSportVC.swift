@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: -Handel Appearance From Grid & List
 enum AppearanceStyle{
     case grid
     case list
@@ -28,7 +29,7 @@ class TapSportVC: UIViewController {
     var appearanceStyleButton:UIBarButtonItem?
     
     
-    
+    //MARK: -Handel Will Appear VC
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.topItem?.title = K.sportGame
         navigationController?.topViewController?.navigationItem.rightBarButtonItem?.isHidden = false
@@ -45,7 +46,7 @@ class TapSportVC: UIViewController {
         
     }
     
-    //Set Appearance View For tab View
+    //MARK: - Set Appearance View For tab View
     func setupTabViewStyle(){
         
         appearanceStyleButton = UIBarButtonItem(image: appearanceStyle.selectedAppearance, style: .plain, target: self, action: #selector(twistStyleOfTabCollection))
@@ -76,7 +77,7 @@ class TapSportVC: UIViewController {
         
     }
     
-    // MARK: - ConfigureCollectionView
+    // MARK: - ConfigureCollectionView by REgister THe Nib
     func configureCollectionView(){
         myCollection.delegate = self
         myCollection.dataSource = self

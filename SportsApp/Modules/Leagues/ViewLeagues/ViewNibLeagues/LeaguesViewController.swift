@@ -17,14 +17,9 @@ class LeaguesViewController: UIViewController ,CustomNibCellProtocol{
     var viewAllLeague:AllLeagueProtocol?
     var getallLeagues:AllLeagueModel?
     
-//    override func viewWillAppear(_ animated: Bool) {
-//       self.navigationController?.navigationBar.topItem?.title = DependencyProvider.sportType.capitalized
-//    }
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.navigationController?.navigationBar.topItem?.title = K.sportGame
-//       
-//    }
-    
+
+    //MARK: -Configure View Didload VC
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLeagueTableView()
@@ -42,14 +37,16 @@ class LeaguesViewController: UIViewController ,CustomNibCellProtocol{
 //MARK: - Function Needed using In League TableView TableView
 extension LeaguesViewController{
     
-    //Configure The Table View
+    //MARK: - Configure register of Nib
     func configureLeagueTableView(){
         leaguesTableView.dataSource = self
         leaguesTableView.delegate = self
         leaguesTableView.register(UINib(nibName: K.customNibNameLeagues, bundle: nil), forCellReuseIdentifier: K.customNibNameIdentfier)
         
     }
-    //Configure The Loading Data
+    
+    
+    //MARK: - Configure The Loading Data
     func configureLoadingDataFromApi(){
         
         viewAllLeague?.getDataFromApiForLeagues()
@@ -71,13 +68,15 @@ extension LeaguesViewController{
 
 //MARK: - Adding Data Source To League Table View
 extension LeaguesViewController: UITableViewDataSource{
+    
+    //MARK: - Number of Leagues in Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewAllLeague?.getNumberOfLeagues() ?? 0
     }
     
     
     
-    
+    //MARK: - Configure Cell in Table View
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: K.customNibNameIdentfier, for: indexPath) as! CustomNibCell
@@ -103,7 +102,7 @@ extension LeaguesViewController: UITableViewDelegate {
         return K.customNibNameLeaguesHeight
     }
     
-    //Press To youtube Button
+    //MARK: - Press To youtube Button
     func didTapButtonInCell(_ cell: CustomNibCell) {
         
         guard let indexPath = leaguesTableView.indexPath(for: cell) else { return }
@@ -119,7 +118,7 @@ extension LeaguesViewController: UITableViewDelegate {
         
     }
     
-    //Test Detalis Second View
+    //MARK: - Navigate to League Details View
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       
         if let leagueDetails = getallLeagues?.result[indexPath.row]{

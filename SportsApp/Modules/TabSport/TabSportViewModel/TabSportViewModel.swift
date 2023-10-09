@@ -17,13 +17,6 @@ protocol TabViewModelProtocol: AllLeagueProtocol,UpCommingEventProtocol,LatestEv
 class TabViewModel:TabViewModelProtocol{
  
     
-    
-    
-
-    
- 
-    
-    
     var handerDataOfLeagues: (() -> Void)?
 
     var handerDataOfTeamDetails: (() -> Void)?

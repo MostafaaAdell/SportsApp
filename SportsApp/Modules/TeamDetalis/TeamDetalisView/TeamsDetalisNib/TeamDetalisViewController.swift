@@ -30,6 +30,9 @@ class TeamDetalisViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
 
     }
+    
+    // MARK: - Congigure View Didload
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +42,7 @@ class TeamDetalisViewController: UIViewController {
         
         
     }
-    
+    // MARK: - Congigure Navigate to the Website
     @IBAction func officailWebsiteButton(_ sender: Any) {
        
         if let teamName = teamDetalis?.result.first?.teamName{
@@ -54,6 +57,8 @@ class TeamDetalisViewController: UIViewController {
 
 //MARK: - Set Function To Configure My UI ViewControler
 extension TeamDetalisViewController {
+    
+    
     func configureTeamDetalisController(){
         
         //Set Button text Aligment in list And Symbol Image in right Image
@@ -63,7 +68,7 @@ extension TeamDetalisViewController {
         stadiumImageView.gradientImageFromTopAndBottom()
         
     }
-    //Getting Data From API
+    //MARK:- Getting Data From API
     func configureLoadingDataFromApi(){
         
         viewTEamDetalis?.getDataFromApiForTeamDetails()

@@ -8,10 +8,11 @@
 import Foundation
 
 protocol CoreDataLeagueProtocaol{
-   // func retriveleagueModel()->[Leagues]?
+    func retriveleagueModel()->[Leagues]?
     func removeLeagueFromFavorite(league:Leagues)
     func addLeagueFromFavorite(league:Leagues)
     func checkExistanceOfFavorite(league:Leagues)->Bool
+    func deleteLeagueFormCollection(index:Int)
 }
 class CoreDataLeagueViewModel:CoreDataLeagueProtocaol{
   
@@ -23,8 +24,8 @@ class CoreDataLeagueViewModel:CoreDataLeagueProtocaol{
     lazy var leagueArray = retriveleagueModel()
     
     
-    
-   private func retriveleagueModel()->[Leagues]?{
+    //MARK: - Retrived leagues from Local Data
+    func retriveleagueModel()->[Leagues]?{
         if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
             return retrivedData
             
@@ -32,6 +33,7 @@ class CoreDataLeagueViewModel:CoreDataLeagueProtocaol{
         return nil
     }
     
+    //MARK: -Remove League From reloaded Leagues
     func removeLeagueFromFavorite(league:Leagues) {
         if let getIndexLeague = leagueArray?.firstIndex(of:league){
             leagueCoreData.deleteLeague(index: getIndexLeague)
@@ -40,6 +42,13 @@ class CoreDataLeagueViewModel:CoreDataLeagueProtocaol{
           
     }
     
+    //MARK: - Delete League From Core Data
+    func deleteLeagueFormCollection(index:Int){
+        self.leagueCoreData.deleteLeague(index: index)
+    }
+    
+    
+    //MARK: - Adding Legues into Favorites
     func addLeagueFromFavorite(league:Leagues) {
         leagueCoreData.setLeaguesDetalis(leagueKey: league.leagueKey, leagueName: league.leagueName, leagueLogo: league.leagueLogo ?? K.defaultLeagueLogo, countryName: league.countryName, countryLogo: league.countryLogo ?? "No Country Logo", countryKey: league.countryKey)
         
@@ -47,6 +56,8 @@ class CoreDataLeagueViewModel:CoreDataLeagueProtocaol{
         leagueArray = retriveleagueModel()
          
     }
+    
+    //MARK: - Check Leagues in Favorites Or Not
     func checkExistanceOfFavorite(league:Leagues) -> Bool {
         if let _ = leagueArray?.first(where: {$0.leagueKey == league.leagueKey}){
             return true

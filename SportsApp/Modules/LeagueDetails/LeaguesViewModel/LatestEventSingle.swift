@@ -17,9 +17,9 @@ protocol LatestEventProtocol{
 class LatestEvent:LatestEventProtocol{
     
     
-    
+    var services: NetworkServiceDelegate?
     var handerDataOfLatestEvent: (() -> Void)?
-
+    
     private var latestEvent: LatestEventsModel? {
         didSet{
             if let validHander =  handerDataOfLatestEvent {
@@ -27,15 +27,16 @@ class LatestEvent:LatestEventProtocol{
             }
         }
     }
-    var services: NetworkServiceDelegate?
-
+    
     init(services: NetworkServiceDelegate?){
         self.services = services
     }
     
+    //MARK: - Get Data From Api to Latest Event
+    
     func getDataFromApiForLatest() {
         services?.fetchDataFromAPIForFootball(Handler: { (dataValue:LatestEventsModel?, error: Error?) in
-
+            
             if let data = dataValue {
                 self.latestEvent = data
             }else {
@@ -46,14 +47,19 @@ class LatestEvent:LatestEventProtocol{
         })
     }
     
+    //MARK: - Get Data to Latest Event Model
     func getLatestEventArray() -> LatestEventsModel? {
         return latestEvent
     }
+    
+    //MARK: - Get Count of Latest Event Model
     
     func getNumberOfLatestEvent() -> Int? {
         return 3
         //return latestEvent?.result.count
     }
+    
+    //MARK: - Get All Teams in latest Event
     
     func retrivedTeamsFromLatestEvent(avaliableTeams:inout[TeamModel]?){
         if let allTeams = latestEvent?.result{
@@ -79,7 +85,7 @@ class LatestEvent:LatestEventProtocol{
             }
         }
     }
-
+    
     
     
     

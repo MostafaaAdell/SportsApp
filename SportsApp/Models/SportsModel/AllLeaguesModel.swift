@@ -7,13 +7,13 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - AllLeagueModel
 struct AllLeagueModel: Codable {
     let success: Int
     let result: [Leagues]
 }
 
-// MARK: - Result
+// MARK: - Leagues
 struct Leagues: Codable ,Equatable{
     let leagueKey: Int
     let leagueName: String

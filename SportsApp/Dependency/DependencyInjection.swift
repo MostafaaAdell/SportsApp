@@ -12,6 +12,8 @@ struct DependencyProvider{
     static var leaugeID:Int = 0
     static var teamId:Int = 0
     static var leagueDetails:Leagues?
+    
+    //MARK: - Handel URL to get suitble url for Network call
     //Leagues
     static var ApiLeaguesSports:ApiPreparationDelegate {
         return HandelURL(sportType: sportType)
@@ -34,6 +36,7 @@ struct DependencyProvider{
     
     
     
+    //MARK: -Network call according to the event
     //Network Call for sports leagues
     static var networkServicesForLeague:NetworkServiceDelegate{
         return NetworkServices(setUrl: ApiLeaguesSports)
@@ -52,7 +55,7 @@ struct DependencyProvider{
     }
     
     
-    
+    //MARK: - Hande The View Model to the Retrived Data
     //setup Network Detalis To Return Certain Url
     static var leaguesNetwork:AllLeagueProtocol{
         
@@ -74,6 +77,7 @@ struct DependencyProvider{
  
     
     
+    //MARK: - Navigation To the Certain View
    //leagues
     static var leagueViewController:LeaguesViewController {
         let vc = LeaguesViewController(nibName: K.leaguesViewController, bundle: nil)

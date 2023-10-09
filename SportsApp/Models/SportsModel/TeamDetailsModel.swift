@@ -12,13 +12,13 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - TeamDetailsModel
 struct TeamDetailsModel: Codable {
     let success: Int
     let result: [TeamDetails]
 }
 
-// MARK: - Result
+// MARK: - TeamDetails
 struct TeamDetails: Codable {
     let teamKey: Int?
     let teamName: String?
@@ -36,12 +36,10 @@ struct TeamDetails: Codable {
 
 struct Coach: Codable {
     let coachName: String
-    //let coachCountry, coachAge: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case coachName = "coach_name"
-     //   case coachCountry = "coach_country"
-      //  case coachAge = "coach_age"
+    
     }
 }
 
@@ -50,11 +48,9 @@ struct Player: Codable {
     let playerKey: Int
     let playerImage: String
     let playerName, playerNumber: String
-   // let playerCountry: JSONNull?
     let playerType: PlayerType
     let playerAge, playerMatchPlayed, playerGoals, playerYellowCards: String
     let playerRedCards: String
-  //  let playerInjured: PlayerInjured
     let playerSubstituteOut, playerSubstitutesOnBench, playerAssists, playerBirthdate: String
     let playerIsCaptain, playerShotsTotal, playerGoalsConceded, playerFoulsCommitted: String
     let playerTackles, playerBlocks, playerCrossesTotal, playerInterceptions: String
@@ -69,14 +65,12 @@ struct Player: Codable {
         case playerImage = "player_image"
         case playerName = "player_name"
         case playerNumber = "player_number"
-       // case playerCountry = "player_country"
         case playerType = "player_type"
         case playerAge = "player_age"
         case playerMatchPlayed = "player_match_played"
         case playerGoals = "player_goals"
         case playerYellowCards = "player_yellow_cards"
         case playerRedCards = "player_red_cards"
-       // case playerInjured = "player_injured"
         case playerSubstituteOut = "player_substitute_out"
         case playerSubstitutesOnBench = "player_substitutes_on_bench"
         case playerAssists = "player_assists"
@@ -108,11 +102,6 @@ struct Player: Codable {
         case playerRating = "player_rating"
     }
 }
-
-//enum PlayerInjured: String, Codable {
-//    case no = "No"
-//    case yes = "Yes"
-//}
 
 enum PlayerType: String, Codable {
     case defenders = "Defenders"

@@ -13,15 +13,15 @@ protocol UpCommingEventProtocol{
     func retrivedTeamsFromUpCommingEvent()->[TeamModel]?
     var handerDataOfUpcommingEvent : (() -> Void)?{get set}
     
-
+    
 }
 
 class UpcommingEvent:UpCommingEventProtocol{
     
     
-   
     
     
+    var services: NetworkServiceDelegate?
     var handerDataOfUpcommingEvent: (() -> Void)?
     
     private var upCommingEvent: UpcommingEventModel? {
@@ -31,15 +31,16 @@ class UpcommingEvent:UpCommingEventProtocol{
             }
         }
     }
-    var services: NetworkServiceDelegate?
-
+    
+    
     init(services: NetworkServiceDelegate?){
         self.services = services
     }
     
+    //MARK: - Get Data From Api to UpComming Event
     func getDataFromApiForUpcomming() {
         services?.fetchDataFromAPIForFootball(Handler: { (dataValue:UpcommingEventModel?, error: Error?) in
-
+            
             if let data = dataValue {
                 self.upCommingEvent = data
             }else {
@@ -50,13 +51,19 @@ class UpcommingEvent:UpCommingEventProtocol{
         })
     }
     
+    //MARK: - Return Upcomming Event Model
     func getUpcomingEventArray() -> UpcommingEventModel? {
         return upCommingEvent
     }
     
+    //MARK: - Return Count of upcomming Event
+    
     func getNumberOfUpcommingEvent() -> Int? {
         return upCommingEvent?.result.count
     }
+    
+    
+    //MARK: - Return All Teams in Upcomming Event
     
     func retrivedTeamsFromUpCommingEvent() -> [TeamModel]? {
         

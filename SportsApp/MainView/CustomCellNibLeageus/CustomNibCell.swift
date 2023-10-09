@@ -18,18 +18,16 @@ class CustomNibCell: UITableViewCell {
     @IBOutlet weak var redirectYoutubeButton: UIButton!
     @IBOutlet weak var detalisLeagueLabel: UILabel!
     @IBOutlet weak var logoLeageuImage: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
+   
     
-    
+    //MARK: - Congure The Detalis of Cell
     func configureCell(league:Leagues){
         detalisLeagueLabel.text = league.leagueName
         
@@ -42,7 +40,7 @@ class CustomNibCell: UITableViewCell {
         }
         
     }
-    
+    //MARK: - Handel Action of redierct of Youtube Button
     @IBAction func redirectToLeagueWebsite(_ sender: UIButton) {
         delegate?.didTapButtonInCell(self)
     }

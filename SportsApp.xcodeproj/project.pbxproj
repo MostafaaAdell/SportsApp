@@ -258,6 +258,7 @@
 				4586D9E12AC87AD500E9154E /* Dependency */,
 				4529BD412AC49DB000F4A84E /* Constants */,
 				45131EDE2AC6666D00F0131C /* MainView */,
+				458BB60F2AD46F91003E2D02 /* LocalFavoritesLeague */,
 				4548CE042AC44C54000940B9 /* Services */,
 				4548CDFF2AC44AF1000940B9 /* Models */,
 				4548CDFE2AC44AE4000940B9 /* Modules */,
@@ -350,12 +351,19 @@
 			path = CoreDataServices;
 			sourceTree = "<group>";
 		};
+		458BB60F2AD46F91003E2D02 /* LocalFavoritesLeague */ = {
+			isa = PBXGroup;
+			children = (
+				45D7E2702AD4374D00968548 /* CoreDataViewModel.swift */,
+			);
+			path = LocalFavoritesLeague;
+			sourceTree = "<group>";
+		};
 		458CC65B2ACEDA4F00BED7B3 /* LeaguesViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				459C0C812ACDB47000E9D853 /* UpCommingEventSingle.swift */,
 				459C0C832ACDB4B000E9D853 /* LatestEventSingle.swift */,
-				45D7E2702AD4374D00968548 /* CoreDataViewModel.swift */,
 			);
 			path = LeaguesViewModel;
 			sourceTree = "<group>";
