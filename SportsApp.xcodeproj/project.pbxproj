@@ -29,7 +29,6 @@
 		4586D9E62AC89C0B00E9154E /* LeaguesCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4586D9E52AC89C0B00E9154E /* LeaguesCoreData.swift */; };
 		458801E82AD3031200DFD466 /* Animation7.json in Resources */ = {isa = PBXBuildFile; fileRef = 458801E72AD3031200DFD466 /* Animation7.json */; };
 		458D46922ACB600A0097AEFE /* LatestEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D46912ACB600A0097AEFE /* LatestEventsModel.swift */; };
-		458E155B2AD212660000DB89 /* Animation2.json in Resources */ = {isa = PBXBuildFile; fileRef = 458E155A2AD212660000DB89 /* Animation2.json */; };
 		458E155E2AD216A40000DB89 /* Animation3.json in Resources */ = {isa = PBXBuildFile; fileRef = 458E155C2AD216A40000DB89 /* Animation3.json */; };
 		458E155F2AD216A40000DB89 /* Animation4.json in Resources */ = {isa = PBXBuildFile; fileRef = 458E155D2AD216A40000DB89 /* Animation4.json */; };
 		458FA3082AD25FF600E16ACA /* Animation6.json in Resources */ = {isa = PBXBuildFile; fileRef = 458FA3072AD25FF600E16ACA /* Animation6.json */; };
@@ -87,7 +86,6 @@
 		4586D9E52AC89C0B00E9154E /* LeaguesCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesCoreData.swift; sourceTree = "<group>"; };
 		458801E72AD3031200DFD466 /* Animation7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation7.json; sourceTree = "<group>"; };
 		458D46912ACB600A0097AEFE /* LatestEventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestEventsModel.swift; sourceTree = "<group>"; };
-		458E155A2AD212660000DB89 /* Animation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Animation2.json; path = ../../../../../Downloads/Animation2.json; sourceTree = "<group>"; };
 		458E155C2AD216A40000DB89 /* Animation3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation3.json; sourceTree = "<group>"; };
 		458E155D2AD216A40000DB89 /* Animation4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation4.json; sourceTree = "<group>"; };
 		458FA3072AD25FF600E16ACA /* Animation6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation6.json; sourceTree = "<group>"; };
@@ -380,7 +378,6 @@
 			isa = PBXGroup;
 			children = (
 				4592C9BF2AD19BA30068CAAB /* Animation.json */,
-				458E155A2AD212660000DB89 /* Animation2.json */,
 				458E155C2AD216A40000DB89 /* Animation3.json */,
 				458E155D2AD216A40000DB89 /* Animation4.json */,
 				459812D92AD219BB000CFF69 /* Animation5.json */,
@@ -586,7 +583,6 @@
 				4529BD402AC4990500F4A84E /* CustomNibCell.xib in Resources */,
 				458FA3082AD25FF600E16ACA /* Animation6.json in Resources */,
 				459B3AFF2ACA338A00C04DC6 /* LeauguesView.storyboard in Resources */,
-				458E155B2AD212660000DB89 /* Animation2.json in Resources */,
 				4548CDF62AC44AB9000940B9 /* LaunchScreen.storyboard in Resources */,
 				459B3B032ACA338A00C04DC6 /* MyHeaderView.xib in Resources */,
 				458E155F2AD216A40000DB89 /* Animation4.json in Resources */,
