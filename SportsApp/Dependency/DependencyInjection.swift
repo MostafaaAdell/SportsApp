@@ -89,6 +89,7 @@ struct DependencyProvider{
         let vc = storyboard.instantiateViewController(withIdentifier: K.leaguesAllEvent) as! LeaguesVC
          vc.viewUpcommingEvent = upCommingEventNetwork
          vc.viewlatestEvent = latestEventNetwork
+         vc.leagueCoreDataSaved = CoreDataLeagueViewModel()
          vc.leagueDetails = leagueDetails
          vc.view.backgroundColor = .white
          vc.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]

@@ -17,10 +17,9 @@ class LeaguesVC: UIViewController {
     
 
     private var queue = OperationQueue()
-    let leagueCoreData = LeaguesCoreData.sharedDataLeagues
+    var leagueCoreDataSaved:CoreDataLeagueProtocaol?
     var viewUpcommingEvent:UpCommingEventProtocol?
     var viewlatestEvent:LatestEventProtocol?
-    var leagueArray:[Leagues]?
     var getUpcommingEvent:UpcommingEventModel?
     var getLatestEvent:LatestEventsModel?
     var teamsDetalis:[TeamModel]?
@@ -32,10 +31,7 @@ class LeaguesVC: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
-           leagueArray = retrivedData
-            self.navigationController?.navigationBar.topItem?.title = leagueDetails?.leagueName
-        }
+        self.navigationController?.navigationBar.topItem?.title = leagueDetails?.leagueName
         self.leaguesCollectionView.reloadData()
     }
     
@@ -47,9 +43,6 @@ class LeaguesVC: UIViewController {
       
         configureCollectionView()
         leaguesCollectionView.collectionViewLayout = createCompositionalLayout()
-        if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
-           leagueArray = retrivedData
-        }
         registerCollectionViewByCell()
         opertionalQueuetoGetAllTeam()
         configureFavoritueButton()
@@ -187,32 +180,24 @@ extension LeaguesVC{
     //Animate when set or remove Favorite
     @objc func setFavoriteAnimation(){
         myView.removeFromSuperview()
-        if let leagueDetails = leagueDetails{
-            
+        if let validLeagueDetails = leagueDetails{
             if navigationItem.rightBarButtonItems?.first?.image == UIImage(systemName:K.favoriteIconSave){
-                if let getIndexLeague = leagueArray?.firstIndex(of:leagueDetails){
-                    leagueCoreData.deleteLeague(index: getIndexLeague)
-                    if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
-                       leagueArray = retrivedData
-                    }
-                    checkNotFavorites()
-                }
                 
-            }else{
+                leagueCoreDataSaved?.removeLeagueFromFavorite(league:validLeagueDetails)
+                checkNotFavorites()
+            }
+            
+            else{
                 
-                leagueCoreData.setLeaguesDetalis(leagueKey: leagueDetails.leagueKey, leagueName: leagueDetails.leagueName, leagueLogo: leagueDetails.leagueLogo ?? K.defaultLeagueLogo, countryName: leagueDetails.countryName, countryLogo: leagueDetails.countryLogo ?? "No Country Logo", countryKey: leagueDetails.countryKey)
-                
-                leagueArray?.removeAll()
-                if let (_,retrivedData) = leagueCoreData.retrivedLeagueList(){
-                   leagueArray = retrivedData
-                }
+                leagueCoreDataSaved?.addLeagueFromFavorite(league:validLeagueDetails)
                 navigationItem.rightBarButtonItems?.first?.image = UIImage(systemName:K.favoriteIconSave)
                 navigationItem.rightBarButtonItems?.first?.tintColor = .red
             }
         }
-        
-        
     }
+        
+        
+    
     
     //Start animation of Favorite tap
     func luanchFavoriteAnimation(){
@@ -236,7 +221,7 @@ extension LeaguesVC{
     
     //set Favoritesv if found in CoreData
     func checkInFavorites(){
-        if let _ = leagueArray?.first(where: {$0.leagueKey == leagueDetails?.leagueKey}){
+        if (leagueCoreDataSaved?.checkExistanceOfFavorite(league: leagueDetails!)) == true{
             navigationItem.rightBarButtonItems?.first?.image = UIImage(systemName:K.favoriteIconSave)
             navigationItem.rightBarButtonItems?.first?.tintColor = .red
         }
@@ -252,55 +237,6 @@ extension LeaguesVC{
     
     
 
-    
-    //MARK: - Getting Team Logo And Names
-    func GetTeamLogoAndName(){
-        teamsDetalis = [TeamModel]()
-        
-        if let allTeams = getUpcommingEvent?.result{
-            for team in allTeams{
-                
-                var everyTeam = TeamModel(teamName: team.eventHomeTeam,teamLogo: team.homeTeamLogo,teamkey: team.homeTeamKey)
-                if let check = teamsDetalis?.contains(where: {$0 == everyTeam}) {
-                    if check == false{
-                        teamsDetalis?.append(everyTeam)
-                    }
-                    
-                }
-                everyTeam = TeamModel(teamName: team.eventAwayTeam,teamLogo: team.awayTeamLogo,teamkey: team.awayTeamKey)
-                if let check = teamsDetalis?.contains(where: {$0 == everyTeam}) {
-                    if check == false{
-                        teamsDetalis?.append(everyTeam)
-                    }
-                }
-                
-                
-                
-            }
-        }
-        
-        if let allTeams = getLatestEvent?.result{
-            for team in allTeams{
-                
-                var everyTeam = TeamModel(teamName: team.eventHomeTeam,teamLogo: team.homeTeamLogo,teamkey: team.homeTeamKey)
-                if let check = teamsDetalis?.contains(where: {$0 == everyTeam}) {
-                    if check == false{
-                        teamsDetalis?.append(everyTeam)
-                    }
-                    
-                }
-                everyTeam = TeamModel(teamName: team.eventAwayTeam,teamLogo: team.awayTeamLogo,teamkey: team.awayTeamKey)
-                if let check = teamsDetalis?.contains(where: {$0 == everyTeam}) {
-                    if check == false{
-                        teamsDetalis?.append(everyTeam)
-                    }
-                }
-                
-                
-                
-            }
-        }
-    }
     
     
     //MARK: -  Configure Collection View Register
@@ -424,7 +360,18 @@ extension LeaguesVC{
 extension LeaguesVC{
     
     
-  
+    //MARK: - Getting Team Logo And Names
+    func GetTeamLogoAndName(){
+        teamsDetalis = [TeamModel]()
+        if let upCommingTeams =  viewUpcommingEvent?.retrivedTeamsFromUpCommingEvent(){
+            teamsDetalis?.append(contentsOf: upCommingTeams)
+           
+        }
+        viewlatestEvent?.retrivedTeamsFromLatestEvent(avaliableTeams:&teamsDetalis)
+        
+    }
+    
+
     
     func opertionalQueuetoGetAllTeam(){
         
@@ -437,10 +384,10 @@ extension LeaguesVC{
             self.viewUpcommingEvent?.handerDataOfUpcommingEvent = { [weak self] in
                 
                 self?.getUpcommingEvent = self?.viewUpcommingEvent?.getUpcomingEventArray()
-                self?.GetTeamLogoAndName()
+                
                 OperationQueue.main.addOperation {
                     self?.leaguesCollectionView.reloadData()
-                    self?.activityIndicatorView.stopLoading(view: (self?.view)!)
+                   // self?.activityIndicatorView.stopLoading(view: (self?.view)!)
 
                 }
                 
@@ -448,14 +395,14 @@ extension LeaguesVC{
         }
         
         let getDataLatestEvent = BlockOperation{
-            DispatchQueue.main.async {
-                self.activityIndicatorView.startLoading(view: self.view)
-            }
+//            DispatchQueue.main.async {
+//                self.activityIndicatorView.startLoading(view: self.view)
+//            }
             self.viewlatestEvent?.getDataFromApiForLatest()
             self.viewlatestEvent?.handerDataOfLatestEvent = { [weak self] in
                 
                 self?.getLatestEvent = self?.viewlatestEvent?.getLatestEventArray()
-                
+                self?.GetTeamLogoAndName()
                 OperationQueue.main.addOperation {
                     self?.leaguesCollectionView.reloadData()
                     self?.activityIndicatorView.stopLoading(view: (self?.view)!)
@@ -469,7 +416,7 @@ extension LeaguesVC{
         
         
         
-        getDataOfUpcommingEvent.addDependency(getDataLatestEvent)
+        getDataLatestEvent.addDependency(getDataOfUpcommingEvent)
         queue.addOperations([getDataOfUpcommingEvent,getDataLatestEvent], waitUntilFinished: true)
         
         

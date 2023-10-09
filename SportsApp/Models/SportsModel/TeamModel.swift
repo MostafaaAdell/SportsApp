@@ -12,11 +12,12 @@ struct TeamModel: Equatable {
     var teamLogo:String?
     var teamkey:Int?
     
+    
     static func == (lhs: TeamModel , rhs:TeamModel) ->Bool {
-        return  lhs.teamName == rhs.teamName
+        return  lhs.teamkey == rhs.teamkey
     }
     static func != (lhs: TeamModel , rhs:TeamModel) ->Bool {
-        return  lhs.teamName != rhs.teamName
+        return  lhs.teamkey != rhs.teamkey
     }
     
     

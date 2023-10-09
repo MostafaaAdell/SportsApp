@@ -15,6 +15,10 @@ protocol TabViewModelProtocol: AllLeagueProtocol,UpCommingEventProtocol,LatestEv
 
 
 class TabViewModel:TabViewModelProtocol{
+ 
+    
+    
+    
 
     
  
@@ -143,7 +147,12 @@ class TabViewModel:TabViewModelProtocol{
         return latestEvent?.getNumberOfLatestEvent()
 
     }
+    func retrivedTeamsFromUpCommingEvent() -> [TeamModel]? {
+        return  nil
+    }
     
+    func retrivedTeamsFromLatestEvent(avaliableTeams:inout[TeamModel]?) {
+    }
 
 
  

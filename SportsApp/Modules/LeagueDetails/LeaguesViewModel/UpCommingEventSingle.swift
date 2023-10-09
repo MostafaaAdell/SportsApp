@@ -10,11 +10,17 @@ protocol UpCommingEventProtocol{
     func getDataFromApiForUpcomming()
     func getUpcomingEventArray ()->UpcommingEventModel?
     func getNumberOfUpcommingEvent() -> Int?
+    func retrivedTeamsFromUpCommingEvent()->[TeamModel]?
     var handerDataOfUpcommingEvent : (() -> Void)?{get set}
+    
 
 }
 
 class UpcommingEvent:UpCommingEventProtocol{
+    
+    
+   
+    
     
     var handerDataOfUpcommingEvent: (() -> Void)?
     
@@ -52,7 +58,34 @@ class UpcommingEvent:UpCommingEventProtocol{
         return upCommingEvent?.result.count
     }
     
-   
+    func retrivedTeamsFromUpCommingEvent() -> [TeamModel]? {
+        
+        
+        var teamsDetalis:[TeamModel]? = [TeamModel]()
+        if let allTeams = upCommingEvent?.result{
+            
+            for team in allTeams{
+                
+                var everyTeam = TeamModel(teamName: team.eventHomeTeam,teamLogo: team.homeTeamLogo,teamkey: team.homeTeamKey)
+                if let check = teamsDetalis?.contains(where: {$0 == everyTeam}) {
+                    if check == false{
+                        teamsDetalis?.append(everyTeam)
+                    }
+                    
+                }
+                everyTeam = TeamModel(teamName: team.eventAwayTeam,teamLogo: team.awayTeamLogo,teamkey: team.awayTeamKey)
+                if let check = teamsDetalis?.contains(where: {$0 == everyTeam}) {
+                    if check == false{
+                        teamsDetalis?.append(everyTeam)
+                    }
+                }
+                
+                
+                
+            }
+        }
+        return teamsDetalis
+    }
     
     
 }

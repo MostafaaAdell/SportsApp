@@ -11,9 +11,12 @@ protocol LatestEventProtocol{
     func getLatestEventArray ()->LatestEventsModel?
     func getNumberOfLatestEvent() -> Int?
     var handerDataOfLatestEvent : (() -> Void)?{get set}
+    func retrivedTeamsFromLatestEvent(avaliableTeams:inout[TeamModel]?)
 }
 
 class LatestEvent:LatestEventProtocol{
+    
+    
     
     var handerDataOfLatestEvent: (() -> Void)?
 
@@ -51,6 +54,32 @@ class LatestEvent:LatestEventProtocol{
         return 3
         //return latestEvent?.result.count
     }
+    
+    func retrivedTeamsFromLatestEvent(avaliableTeams:inout[TeamModel]?){
+        if let allTeams = latestEvent?.result{
+            
+            for team in allTeams{
+                
+                var everyTeam = TeamModel(teamName: team.eventHomeTeam,teamLogo: team.homeTeamLogo,teamkey: team.homeTeamKey)
+                if let check = avaliableTeams?.contains(where: {$0 == everyTeam}) {
+                    if check == false{
+                        avaliableTeams?.append(everyTeam)
+                    }
+                    
+                }
+                everyTeam = TeamModel(teamName: team.eventAwayTeam,teamLogo: team.awayTeamLogo,teamkey: team.awayTeamKey)
+                if let check = avaliableTeams?.contains(where: {$0 == everyTeam}) {
+                    if check == false{
+                        avaliableTeams?.append(everyTeam)
+                    }
+                }
+                
+                
+                
+            }
+        }
+    }
+
     
     
     
