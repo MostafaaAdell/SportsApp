@@ -55,7 +55,7 @@ class LatestEvent:LatestEventProtocol{
     //MARK: - Get Count of Latest Event Model
     
     func getNumberOfLatestEvent() -> Int? {
-        return 3
+        return 10
         //return latestEvent?.result.count
     }
     

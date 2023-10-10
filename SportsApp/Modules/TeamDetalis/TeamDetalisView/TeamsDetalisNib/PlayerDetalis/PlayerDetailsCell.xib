@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PlayerDetailsCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="134"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="134"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4aP-Lv-9Eg">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="134"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k6u-qi-1t7">
+                                <rect key="frame" x="0.0" y="-12" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Anh-iG-Jog"/>
+                                    <constraint firstAttribute="height" constant="80" id="F8f-Er-rkD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="Lyaer.maskToBound" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mustafa Adel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Lg-M1-3mY">
+                                <rect key="frame" x="0.0" y="73" width="80" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forwards" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUz-Iz-8U4">
+                                <rect key="frame" x="0.0" y="114" width="80" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ivS-qG-pMv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="k6u-qi-1t7" firstAttribute="centerX" secondItem="4aP-Lv-9Eg" secondAttribute="centerX" id="9iF-Qq-YPB"/>
+                            <constraint firstItem="6Lg-M1-3mY" firstAttribute="leading" secondItem="4aP-Lv-9Eg" secondAttribute="leading" id="I5c-bc-AaI"/>
+                            <constraint firstAttribute="trailing" secondItem="6Lg-M1-3mY" secondAttribute="trailing" id="KEj-fd-BuS"/>
+                            <constraint firstItem="JUz-Iz-8U4" firstAttribute="leading" secondItem="4aP-Lv-9Eg" secondAttribute="leading" id="P8j-Ht-iZ2"/>
+                            <constraint firstAttribute="bottom" secondItem="JUz-Iz-8U4" secondAttribute="bottom" id="TiY-rO-2gv"/>
+                            <constraint firstItem="6Lg-M1-3mY" firstAttribute="top" secondItem="k6u-qi-1t7" secondAttribute="bottom" constant="5" id="Ufc-99-MXk"/>
+                            <constraint firstAttribute="trailing" secondItem="JUz-Iz-8U4" secondAttribute="trailing" id="bcw-Nd-i47"/>
+                            <constraint firstItem="JUz-Iz-8U4" firstAttribute="top" secondItem="6Lg-M1-3mY" secondAttribute="bottom" constant="5" id="nvH-Fg-j4p"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="4aP-Lv-9Eg" secondAttribute="bottom" id="DgI-D7-5ya"/>
+                <constraint firstItem="4aP-Lv-9Eg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ju8-YT-ho2"/>
+                <constraint firstItem="4aP-Lv-9Eg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iuZ-8f-2J1"/>
+                <constraint firstAttribute="trailing" secondItem="4aP-Lv-9Eg" secondAttribute="trailing" id="v2F-mN-ksv"/>
+            </constraints>
+            <size key="customSize" width="80" height="134"/>
+            <connections>
+                <outlet property="playerImage" destination="k6u-qi-1t7" id="x6V-bR-9f8"/>
+                <outlet property="playerName" destination="6Lg-M1-3mY" id="hM9-am-IZ8"/>
+                <outlet property="playerPosition" destination="JUz-Iz-8U4" id="P1v-5F-AWf"/>
+            </connections>
+            <point key="canvasLocation" x="196.94656488549617" y="45.070422535211272"/>
+        </collectionViewCell>
+    </objects>
+</document>

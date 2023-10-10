@@ -25,6 +25,8 @@ struct K {
     
     //Custom Team Controller & Storyboard
     static let customNibTeamDetalis = "TeamDetalisViewController"
+    static let playerDetailsNibCell = "PlayerDetailsCell"
+
     static let leaguesViewController = "LeaguesViewController"
     static let leaguesAllEvent = "LeaguesVC"
     static let storyBoardLeagueIdentfier = "LeauguesView"
