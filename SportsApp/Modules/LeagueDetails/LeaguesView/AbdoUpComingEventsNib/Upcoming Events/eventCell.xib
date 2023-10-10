@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="eventCell" customModule="SportsApp" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="TJX-4K-RpR" customClass="eventCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="463" height="214"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="463" height="214"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjt-Rq-St5">
+                        <rect key="frame" x="0.0" y="0.0" width="463" height="214"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PremierLeagueBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="Vwt-kw-1Kr">
+                                <rect key="frame" x="0.0" y="20" width="463" height="174"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="epq-la-4fz">
+                                <rect key="frame" x="358" y="49" width="90" height="116"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BasketBall" translatesAutoresizingMaskIntoConstraints="NO" id="05J-CF-8KM">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="TRO-at-LtM"/>
+                                            <constraint firstAttribute="width" constant="90" id="wEb-Ct-QqM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Man United" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL3-Ls-f0B">
+                                        <rect key="frame" x="0.0" y="98" width="90" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0OF-91-u7p">
+                                <rect key="frame" x="15" y="49" width="90" height="116"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BasketBall" translatesAutoresizingMaskIntoConstraints="NO" id="rXk-ht-1zo">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="69O-7j-e9x"/>
+                                            <constraint firstAttribute="width" constant="90" id="GTe-Ou-dvU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Man United" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sma-GL-chg">
+                                        <rect key="frame" x="0.0" y="98" width="90" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F2c-1n-oMG">
+                                <rect key="frame" x="202" y="5" width="59" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17:30:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PN2-FE-cPC">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023-09-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzZ-iU-hEH">
+                                        <rect key="frame" x="0.0" y="12" width="59" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="F2c-1n-oMG" firstAttribute="top" secondItem="sjt-Rq-St5" secondAttribute="top" constant="5" id="2R2-ij-3Aw"/>
+                            <constraint firstAttribute="bottom" secondItem="Vwt-kw-1Kr" secondAttribute="bottom" constant="20" id="2St-JI-MvE"/>
+                            <constraint firstItem="0OF-91-u7p" firstAttribute="leading" secondItem="sjt-Rq-St5" secondAttribute="leading" constant="15" id="HvQ-jD-ZtB"/>
+                            <constraint firstItem="Vwt-kw-1Kr" firstAttribute="leading" secondItem="sjt-Rq-St5" secondAttribute="leading" id="KyM-YY-7i9"/>
+                            <constraint firstAttribute="trailing" secondItem="epq-la-4fz" secondAttribute="trailing" constant="15" id="Rh1-Aq-yMV"/>
+                            <constraint firstAttribute="trailing" secondItem="Vwt-kw-1Kr" secondAttribute="trailing" id="Ugf-2l-wy6"/>
+                            <constraint firstItem="epq-la-4fz" firstAttribute="centerY" secondItem="sjt-Rq-St5" secondAttribute="centerY" id="VtM-FB-7gB"/>
+                            <constraint firstItem="F2c-1n-oMG" firstAttribute="centerX" secondItem="sjt-Rq-St5" secondAttribute="centerX" id="aEC-zC-7Sr"/>
+                            <constraint firstItem="0OF-91-u7p" firstAttribute="centerY" secondItem="sjt-Rq-St5" secondAttribute="centerY" id="bcK-4F-f0G"/>
+                            <constraint firstItem="Vwt-kw-1Kr" firstAttribute="top" secondItem="sjt-Rq-St5" secondAttribute="top" constant="20" id="rmq-1r-GHr"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="xLm-3h-uzo"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sjt-Rq-St5" secondAttribute="bottom" id="Qkd-Z3-KVg"/>
+                <constraint firstItem="sjt-Rq-St5" firstAttribute="leading" secondItem="TJX-4K-RpR" secondAttribute="leading" id="b53-ht-m0h"/>
+                <constraint firstAttribute="trailing" secondItem="sjt-Rq-St5" secondAttribute="trailing" id="q1H-bJ-pXF"/>
+                <constraint firstItem="sjt-Rq-St5" firstAttribute="top" secondItem="TJX-4K-RpR" secondAttribute="top" id="yC6-qU-nJT"/>
+            </constraints>
+            <size key="customSize" width="463" height="214"/>
+            <connections>
+                <outlet property="clockLabel" destination="PN2-FE-cPC" id="hvg-do-5va"/>
+                <outlet property="dateLabel" destination="fzZ-iU-hEH" id="cYM-cC-ADK"/>
+                <outlet property="firstTeamLogo" destination="rXk-ht-1zo" id="sI4-Ev-zWE"/>
+                <outlet property="firstTeamName" destination="Sma-GL-chg" id="Bwh-vL-JdU"/>
+                <outlet property="myImg" destination="Vwt-kw-1Kr" id="T0b-Gl-t8w"/>
+                <outlet property="secondTeamLogo" destination="05J-CF-8KM" id="22H-ph-Jqx"/>
+                <outlet property="secondTeamName" destination="NL3-Ls-f0B" id="I5i-BU-ywJ"/>
+            </connections>
+            <point key="canvasLocation" x="353.43511450381681" y="76.760563380281695"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="BasketBall" width="1280" height="1280"/>
+        <image name="PremierLeagueBackGround" width="750" height="372"/>
+    </resources>
+</document>
