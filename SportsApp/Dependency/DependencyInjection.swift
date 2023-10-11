@@ -7,10 +7,10 @@
 
 import Foundation
 import UIKit
-struct DependencyProvider{
+ struct DependencyProvider{
     static var sportType:String = "football"
-    static var leaugeID:Int = 0
-    static var teamId:Int = 0
+    static var leaugeID:Int = 152
+    static var teamId:Int = 141
     static var leagueDetails:Leagues?
     
     //MARK: - Handel URL to get suitble url for Network call
