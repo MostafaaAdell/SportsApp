@@ -29,6 +29,7 @@ class SplashVC: UIViewController {
         myView2.center = CGPointMake(myView.frame.maxX/1.25, myView.frame.height/0.16)
         myView.addSubview(myView2)
         myView2.contentMode = .scaleAspectFit
+        
         myView2.play()
         myView.backgroundColor = .black
         
@@ -71,21 +72,4 @@ class SplashVC: UIViewController {
 
 
 
-//        //
-//        let safeArea = view.safeAreaLayoutGuide
-//        let imageView = UIImageView()
-//        imageView.contentMode = .scaleAspectFit
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        myView.addSubview(imageView)
-//        // Add constraints to center the image view
-//        imageView.centerXAnchor.constraint(equalTo: myView.centerXAnchor).isActive = true
-//        imageView.bottomAnchor.constraint(equalTo: myView.centerYAnchor, constant: -150).isActive = true
-//        imageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 30).isActive = true
-//        imageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -30).isActive = true
-//        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-//
-//        // Set the image
-//        let image = UIImage(named: "sportsLogoScreen")
-//        imageView.image = image
-//
-//        //
+
