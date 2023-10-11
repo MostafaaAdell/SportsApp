@@ -10,7 +10,9 @@ import CoreImage
 import Kingfisher
 
 class TeamDetalisViewController: UIViewController {
+  
     
+    @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var teamLogo: UIImageView!
     @IBOutlet weak var teamName: UILabel!
     @IBOutlet weak var teamStadiumName: UILabel!
@@ -38,6 +40,7 @@ class TeamDetalisViewController: UIViewController {
         
         configureTeamDetalisController()
         configureLoadingDataFromApi()
+        ConfigureDelegationAndDataSource()
         
         
         
@@ -74,6 +77,9 @@ extension TeamDetalisViewController {
         viewTEamDetalis?.getDataFromApiForTeamDetails()
         viewTEamDetalis?.handerDataOfTeamDetails = { [weak self] in
             self?.teamDetalis = self?.viewTEamDetalis?.getTeamIdArray()
+            DispatchQueue.main.async {
+                self?.playerCollectionView.reloadData()
+            }
         }
         
     }
@@ -91,6 +97,35 @@ extension UIImageView {
         gradient1.locations = [NSNumber(value: 0.0), NSNumber(value: 0.5), NSNumber(value: 1)]
         gradient1.frame = self.bounds
         self.layer.mask = gradient1
+        
+    }
+    
+}
+
+
+//MARK: - Delegation And DAta Source For Player
+extension TeamDetalisViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    func ConfigureDelegationAndDataSource(){
+        
+        playerCollectionView.delegate = self
+        playerCollectionView.dataSource = self
+        playerCollectionView.register(UINib(nibName: K.playerDetailsNibCell, bundle: nil), forCellWithReuseIdentifier: K.playerDetailsNibCell)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return teamDetalis?.result.first?.players?.count ?? 0 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.playerDetailsNibCell, for: indexPath) as! PlayerDetailsCell
+        if let playerDetails = teamDetalis?.result.first?.players?[indexPath.row]{
+            cell.ConfiguePlayerDetails(playerDetails: playerDetails)
+            
+        }
+        
+        return cell
         
     }
     

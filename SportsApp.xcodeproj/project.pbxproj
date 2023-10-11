@@ -33,6 +33,8 @@
 		458E155F2AD216A40000DB89 /* Animation4.json in Resources */ = {isa = PBXBuildFile; fileRef = 458E155D2AD216A40000DB89 /* Animation4.json */; };
 		458FA3082AD25FF600E16ACA /* Animation6.json in Resources */ = {isa = PBXBuildFile; fileRef = 458FA3072AD25FF600E16ACA /* Animation6.json */; };
 		45903A5D2AD1DC8400451445 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45903A5C2AD1DC8400451445 /* ActivityIndicatorView.swift */; };
+		4590A89E2AD55A2E001A6A98 /* PlayerDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4590A89C2AD55A2E001A6A98 /* PlayerDetailsCell.swift */; };
+		4590A89F2AD55A2E001A6A98 /* PlayerDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4590A89D2AD55A2E001A6A98 /* PlayerDetailsCell.xib */; };
 		4592C9C02AD19BA30068CAAB /* Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4592C9BF2AD19BA30068CAAB /* Animation.json */; };
 		459812DA2AD219BB000CFF69 /* Animation5.json in Resources */ = {isa = PBXBuildFile; fileRef = 459812D92AD219BB000CFF69 /* Animation5.json */; };
 		459995182AC74FF100971B17 /* AllLeaguesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459995172AC74FF100971B17 /* AllLeaguesModel.swift */; };
@@ -90,6 +92,8 @@
 		458E155D2AD216A40000DB89 /* Animation4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation4.json; sourceTree = "<group>"; };
 		458FA3072AD25FF600E16ACA /* Animation6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation6.json; sourceTree = "<group>"; };
 		45903A5C2AD1DC8400451445 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		4590A89C2AD55A2E001A6A98 /* PlayerDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsCell.swift; sourceTree = "<group>"; };
+		4590A89D2AD55A2E001A6A98 /* PlayerDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerDetailsCell.xib; sourceTree = "<group>"; };
 		4592C9BF2AD19BA30068CAAB /* Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation.json; sourceTree = "<group>"; };
 		459812D92AD219BB000CFF69 /* Animation5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Animation5.json; sourceTree = "<group>"; };
 		459994F32AC7241000971B17 /* SportsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +238,7 @@
 			children = (
 				4529BD4C2AC4B5B700F4A84E /* TeamDetalisViewController.swift */,
 				4529BD4D2AC4B5B700F4A84E /* TeamDetalisViewController.xib */,
+				4590A89B2AD558B2001A6A98 /* PlayerDetalis */,
 			);
 			path = TeamsDetalisNib;
 			sourceTree = "<group>";
@@ -374,6 +379,15 @@
 			path = ActivityIndicator;
 			sourceTree = "<group>";
 		};
+		4590A89B2AD558B2001A6A98 /* PlayerDetalis */ = {
+			isa = PBXGroup;
+			children = (
+				4590A89C2AD55A2E001A6A98 /* PlayerDetailsCell.swift */,
+				4590A89D2AD55A2E001A6A98 /* PlayerDetailsCell.xib */,
+			);
+			path = PlayerDetalis;
+			sourceTree = "<group>";
+		};
 		4592C9BE2AD19B8E0068CAAB /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,7 +472,6 @@
 			isa = PBXGroup;
 			children = (
 				459B3B0A2ACA341500C04DC6 /* TabSportView */,
-				459B3B0F2ACA341500C04DC6 /* CustomNibSports */,
 				459B3B122ACA341500C04DC6 /* TabSportViewModel */,
 			);
 			path = TabSport;
@@ -484,6 +497,7 @@
 		459B3B0D2ACA341500C04DC6 /* TabSportView */ = {
 			isa = PBXGroup;
 			children = (
+				459B3B0F2ACA341500C04DC6 /* CustomNibSports */,
 				459B3B0E2ACA341500C04DC6 /* TapSportVC.swift */,
 			);
 			path = TabSportView;
@@ -579,6 +593,7 @@
 				4592C9C02AD19BA30068CAAB /* Animation.json in Resources */,
 				45131EE12AC6666D00F0131C /* Main.storyboard in Resources */,
 				458E155E2AD216A40000DB89 /* Animation3.json in Resources */,
+				4590A89F2AD55A2E001A6A98 /* PlayerDetailsCell.xib in Resources */,
 				4529BD4F2AC4B5B700F4A84E /* TeamDetalisViewController.xib in Resources */,
 				4529BD402AC4990500F4A84E /* CustomNibCell.xib in Resources */,
 				458FA3082AD25FF600E16ACA /* Animation6.json in Resources */,
@@ -654,6 +669,7 @@
 				459B3B072ACA338A00C04DC6 /* TeamsCell.swift in Sources */,
 				459B3B012ACA338A00C04DC6 /* latestEventCell.swift in Sources */,
 				459B3B172ACA341500C04DC6 /* TabCustomCell.swift in Sources */,
+				4590A89E2AD55A2E001A6A98 /* PlayerDetailsCell.swift in Sources */,
 				4548CDE72AC44AB7000940B9 /* AppDelegate.swift in Sources */,
 				4599951E2AC755BA00971B17 /* TeamDetailsModel.swift in Sources */,
 				459B3B082ACA338A00C04DC6 /* LeaguesVC.swift in Sources */,
@@ -833,6 +849,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -863,6 +880,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
