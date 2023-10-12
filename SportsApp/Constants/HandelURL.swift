@@ -14,12 +14,13 @@ protocol ApiPreparationDelegate{
 struct HandelURL{
     
     
-    private  let ApiKey = "10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499"
+     private  let ApiKey = "afb77ab9f069b575f765388ae364e15d2544114f931cff93ee6f2b72d17012af"
      private let mainSportsURl = "https://apiv2.allsportsapi.com/"
      private let sportType:String
      private let met:String
      private var leagueId:Int?
      private var teamId:Int?
+    var sportChossen : sportTypeName?
     
     var URlApi: String {
         get{
@@ -35,6 +36,8 @@ struct HandelURL{
         
         self.sportType = sportType
         self.met = Met.allLeagues.order
+        self.sportChossen = sportTypeName(rawValue: sportType)
+        
     }
     //init withupcomming Event for league Id
     init(sportType:String , leagueIdWithUpcomiingEvent:Int){
@@ -42,6 +45,8 @@ struct HandelURL{
         self.sportType = sportType
         self.met = Met.getUpcomingEvents(leagueIdWithUpcomiingEvent).order
         self.leagueId = leagueIdWithUpcomiingEvent
+        self.sportChossen = sportTypeName(rawValue: sportType)
+
     }
     
     //init with sport type and league ID updated event
@@ -50,6 +55,8 @@ struct HandelURL{
         self.sportType = sportType
         self.met = Met.getLatestResults(leagueIdWithLatestEvent).order
         self.leagueId = leagueIdWithLatestEvent
+        self.sportChossen = sportTypeName(rawValue: sportType)
+
     }
     
     //init with sport type and league ID for latest Event
@@ -58,6 +65,8 @@ struct HandelURL{
         self.sportType = sportType
         self.met = Met.getTeamDetails(teamId).order
         self.teamId = teamId
+        self.sportChossen = sportTypeName(rawValue: sportType)
+
     }
    
    
@@ -79,6 +88,13 @@ struct HandelURL{
         }
     }
     
+    
+    enum sportTypeName:String{
+        case football = "football"
+        case basketball = "basketball"
+        case tennis = "tennis"
+        case cricket = "cricket"
+    }
     
     
 
