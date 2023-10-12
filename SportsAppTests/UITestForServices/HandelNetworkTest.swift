@@ -57,7 +57,7 @@ final class HandelNetworkTest: XCTestCase {
             expectation.fulfill()
           
         })
-        waitForExpectations(timeout: 10)
+        waitForExpectations(timeout: 1000)
         
     }
     

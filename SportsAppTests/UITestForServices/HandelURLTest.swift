@@ -15,7 +15,7 @@ final class HandelURLTest: XCTestCase {
     var sportType = "football"
     var leagueId = 152
     var teamId = 141
-    
+    private let apiKey = "afb77ab9f069b575f765388ae364e15d2544114f931cff93ee6f2b72d17012af"
     
     
     override func setUpWithError() throws {
@@ -50,16 +50,16 @@ final class HandelURLTest: XCTestCase {
         switch url.sportChossen{
             
         case .football:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)/?met=Leagues&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Football APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)/?met=Leagues&APIkey=\(apiKey)", "Url Prepared For Football APi Call is invalid")
             break
         case .basketball:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)/?met=Leagues&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For BasketBall APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)/?met=Leagues&APIkey=\(apiKey)", "Url Prepared For BasketBall APi Call is invalid")
             break
         case .tennis:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)/?met=Leagues&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Tennis APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)/?met=Leagues&APIkey=\(apiKey)", "Url Prepared For Tennis APi Call is invalid")
             break
         case .cricket:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)/?met=Leagues&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Cricket APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)/?met=Leagues&APIkey=\(apiKey)", "Url Prepared For Cricket APi Call is invalid")
             break
          default:
            XCTFail("Invalid Type of Sport Entered")
@@ -81,16 +81,16 @@ final class HandelURLTest: XCTestCase {
         switch url.sportChossen{
             
         case .football:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getCurrentDate())&to=\(Date.getNextYeatDate())&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Football League Upcomming Event APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getCurrentDate())&to=\(Date.getNextYeatDate())&APIkey=\(apiKey)", "Url Prepared For Football League Upcomming Event APi Call is invalid")
             break
         case .basketball:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getCurrentDate())&to=\(Date.getNextYeatDate())&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For BasketBall League Upcomming Event APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getCurrentDate())&to=\(Date.getNextYeatDate())&APIkey=\(apiKey)", "Url Prepared For BasketBall League Upcomming Event APi Call is invalid")
             break
         case .tennis:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getCurrentDate())&to=\(Date.getNextYeatDate())&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Tennis League Upcomming Event APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getCurrentDate())&to=\(Date.getNextYeatDate())&APIkey=\(apiKey)", "Url Prepared For Tennis League Upcomming Event APi Call is invalid")
             break
         case .cricket:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getCurrentDate())&to=\(Date.getNextYeatDate())&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Cricket League Upcomming Event APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getCurrentDate())&to=\(Date.getNextYeatDate())&APIkey=\(apiKey)", "Url Prepared For Cricket League Upcomming Event APi Call is invalid")
             break
          default:
            XCTFail("There is no UpComming Event For This League")
@@ -111,15 +111,15 @@ final class HandelURLTest: XCTestCase {
         switch url.sportChossen{
             
         case .football:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getLastYearDate())&to=\(Date.getCurrentDate())&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Football League Latest Event APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getLastYearDate())&to=\(Date.getCurrentDate())&APIkey=\(apiKey)", "Url Prepared For Football League Latest Event APi Call is invalid")
             break
         case .basketball:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getLastYearDate())&to=\(Date.getCurrentDate())&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Basketball League Latest Event APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getLastYearDate())&to=\(Date.getCurrentDate())&APIkey=\(apiKey)", "Url Prepared For Basketball League Latest Event APi Call is invalid")
         case .tennis:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getLastYearDate())&to=\(Date.getCurrentDate())&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Tennis League Latest Event APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getLastYearDate())&to=\(Date.getCurrentDate())&APIkey=\(apiKey)", "Url Prepared For Tennis League Latest Event APi Call is invalid")
             break
         case .cricket:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getLastYearDate())&to=\(Date.getCurrentDate())&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Cricket League Latest Event APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=\(Date.getLastYearDate())&to=\(Date.getCurrentDate())&APIkey=\(apiKey)", "Url Prepared For Cricket League Latest Event APi Call is invalid")
             break
          default:
             XCTFail("There is no Latest Event For This League")
@@ -140,16 +140,16 @@ final class HandelURLTest: XCTestCase {
         switch url.sportChossen{
             
         case .football:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?&met=Teams&teamId=\(teamId)&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Football Team APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?&met=Teams&teamId=\(teamId)&APIkey=\(apiKey)", "Url Prepared For Football Team APi Call is invalid")
             break
         case .basketball:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?&met=Teams&teamId=\(teamId)&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Basketball Team APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?&met=Teams&teamId=\(teamId)&APIkey=\(apiKey)", "Url Prepared For Basketball Team APi Call is invalid")
             break
         case .tennis:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?&met=Teams&teamId=\(teamId)&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Tennis Team APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?&met=Teams&teamId=\(teamId)&APIkey=\(apiKey)", "Url Prepared For Tennis Team APi Call is invalid")
             break
         case .cricket:
-            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?&met=Teams&teamId=\(teamId)&APIkey=10450c41674e1753658fa155979ccb6e59c7649b49a5a0cd3508b5e823f50499", "Url Prepared For Cricket Team APi Call is invalid")
+            XCTAssertEqual(url.URlApi, "https://apiv2.allsportsapi.com/\(sportType)?&met=Teams&teamId=\(teamId)&APIkey=\(apiKey)", "Url Prepared For Cricket Team APi Call is invalid")
             break
          default:
            XCTFail("Invalid Teams For This League")
