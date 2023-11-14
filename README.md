@@ -27,12 +27,26 @@
 Sports app allows the user to see all sports, view leagues inside them, see the latest results and show up the upcoming events. You can also add any league to your favorites and view the teams inside the league.
 
 
+<!-- ____________________________________________________________________________ -->
+
+## Demo Video
+### Sport App 
+<p align="center">
+    
+ https://github.com/MostafaaAdell/SportsApp/assets/39864881/a938f8a4-8f0e-4f59-be79-563abc693050
+
+</p>
+
+
+
 
 <!-- ____________________________________________________________________________ -->
 ## Table of Contents
  - [Features](#features)
  - [Technologies](#technologies)
  - [Dependencies](#dependencies)
+
+   
  <!-- 
  - [Demo Video](#demo-video)
  - [Screenshot](#screenshot)
