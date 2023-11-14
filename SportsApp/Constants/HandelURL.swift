@@ -14,7 +14,7 @@ protocol ApiPreparationDelegate{
 struct HandelURL{
     
     
-     private  let ApiKey = "afb77ab9f069b575f765388ae364e15d2544114f931cff93ee6f2b72d17012af"
+     private  let ApiKey = "781c097abdf59480d128b025e0d25e338f635a23be25a22b19c0ce744e287b56"
      private let mainSportsURl = "https://apiv2.allsportsapi.com/"
      private let sportType:String
      private let met:String
