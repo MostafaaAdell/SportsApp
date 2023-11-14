@@ -11,13 +11,16 @@
 
 
 <!-- Main Screenshot -->
-<!--
-<img 
-    src="https://techcrunch.com/wp-content/uploads/2020/07/iOS-14.png" 
-    alt="Main Screenshot" 
-    width=800
-/>
--->
+<p>
+    <img src="Mockups/ScreenOne.png" width="13.5%" />
+    <img src="Mockups/ScreenTwo.png" width="13.5%" />
+    <img src="Mockups/ScreenThree.png" width="13.5%" />
+    <img src="Mockups/ScreenFour.png" width="13.5%" />
+    <img src="Mockups/ScreenFive.png" width="13.5%" />
+    <img src="Mockups/ScreenSix.png" width="13.5%" />
+    <img src="Mockups/ScreenSeven.png" width="13.5%" />
+
+</p>
 
 
 <!-- Project bref -->
