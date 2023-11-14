@@ -25,7 +25,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="epq-la-4fz">
                                 <rect key="frame" x="358" y="49" width="90" height="116"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BasketBall" translatesAutoresizingMaskIntoConstraints="NO" id="05J-CF-8KM">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FootballBall" translatesAutoresizingMaskIntoConstraints="NO" id="05J-CF-8KM">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="TRO-at-LtM"/>
@@ -43,7 +43,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0OF-91-u7p">
                                 <rect key="frame" x="15" y="49" width="90" height="116"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BasketBall" translatesAutoresizingMaskIntoConstraints="NO" id="rXk-ht-1zo">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FootballBall" translatesAutoresizingMaskIntoConstraints="NO" id="rXk-ht-1zo">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="69O-7j-e9x"/>
@@ -113,7 +113,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="BasketBall" width="1280" height="1280"/>
+        <image name="FootballBall" width="600" height="589"/>
         <image name="PremierLeagueBackGround" width="750" height="372"/>
     </resources>
 </document>
